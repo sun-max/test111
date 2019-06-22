@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+   <!-- #，id选项选择器-->
+    #hehe{
+        color: aqua;
+        background:blueviolet;
+    }
+    li{
+        color:blueviolet;
+    }
+    #list-2{
+        color:brown;
+    }
+    <!--.class选择器-->
+    .list{
+   color:chartreuse;
+    }
+    <!-- 后代选择器-->
+    .parent .child{
+        color:cornflowerblue;
+    }
+    <!-- 子代选择器，只可以选中儿子元素-->
+    /* 伪类选择器 */
+    a:hover{
+        color:crimson;
+    }
+    </style>
+</head>
+<body>
+    <div id="hahahha"> hahaha</div>
+    <div> hahaha</div>
+    <div> hahaha</div>
+    <!--div p 标签选择器-->
+    <p id="dadada">
+        dadada
+    </p>                    
+    <ul>
+        <li class="list">111</li>
+        <li id=list-2>222</li>
+        <li class="list">333</li>
+        <li>444</li>
+    </ul>
+    <div class="parent">
+        111
+        <div class="child">
+            222
+
+        </div>
+
+    </div>
+    <div class="parent1">
+      111
+      <div>222</div>
+      <div class="child">
+          333
+          <div class="child">
+              444
+          </div>
+      </div>
+
+
+
+    </div>
+   
+            <a href="https://baidu.com"></a>
+</body>
+</html>

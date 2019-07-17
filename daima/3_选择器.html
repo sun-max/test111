@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+  
+    #hahaha{
+        color: aqua;
+        background:blueviolet;
+    }
+    li{
+        color:blueviolet;
+    }
+    #list-2{
+        color:brown;
+    }
+    
+    .list{
+   color:chartreuse;
+    }
+    
+    .parent .child{
+        color:blueviolet;
+    }
+
+    /* <!-- 子代选择器，只可以选中儿子元素-->
+    .parent1 > .child{
+        color:red;
+    } */
+    /* 伪类选择器 */
+    a:hover{
+        color:crimson;
+    }
+    .a + .b {
+        color:seagreen;
+    }
+    .d::after{
+        content:"我是美女";
+        color:pink;
+    }
+    .a,.b,.c{
+        color:blue;
+    }
+    </style>
+</head>
+<body>
+    <div id="hahaha"> hahaha</div>
+    <div> hahaha</div>
+    <div> hahaha</div>
+    <!--div p 标签选择器-->
+    <p id="dadada">
+        dadada
+    </p>                    
+    <ul>
+        <li class="list">111</li>
+        <li id=list-2>222</li>
+        <li class="list">333</li>
+        <li>444</li>
+    </ul>
+    
+    <div class="parent">
+            11111
+            <div>
+                222222
+                <div class="child">
+                    3333
+                </div>
+            </div>
+            <div class="child">
+                4444
+            </div>
+        </div>
+    
+            <a href="https://baidu.com">百度</a>
+            <div>
+            <div class="a">aa</div>
+            <div class="b">bb</div></div>
+            <p class="b">bbb</p>
+            <div class="c">cc</div>
+            <div class="d">dd</div>
+            <div class="txt">
+                哈哈哈哈哈哈哈哈哈哈哈哈
+            </div>
+            
+</body>
+</html>

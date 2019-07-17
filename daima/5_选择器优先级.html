@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .aa{
+        color:seagreen;
+    }
+    div{
+        color:red;
+
+    }
+    #bb{
+        color:blue;
+    }
+    /*style内联样式的优先级 1000 <li color:red> 11 </li>
+    id id选择器 100
+    .class class选择器  伪类选择器 10
+    div h p 标签选择器 1
+    伪元素选择器 1 */
+    /* 优先级相同，写在后面的会覆盖写在前面的 */
+    
+    </style>
+</head>
+<body>
+    <div class="aa" id="bb">111</div>
+</body>
+</html>

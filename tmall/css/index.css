@@ -1,0 +1,135 @@
+/* header 开始 */
+#header{
+    height: 32px;
+    line-height: 32px;
+    background: #a9180a;
+    border-bottom:1px solid #a9180a;
+}
+.header-login{
+    background: #0f0;
+    height: 32px;
+    /* line-height: 32px; */
+    float: left;
+}
+.header-login span,.header-login a{
+    color:#fff;
+    font-size: 12px;
+}
+.header-login a{
+    /* 去掉a标签的下划线 */
+    text-decoration: none;
+    padding:0 10px 0 20px;
+}
+.header-list{
+    float:right;
+    /* background: #00ffff; */
+}
+/* 子代选择器 */
+.header-list > li{
+    float: left;
+    padding:0 14px 0 10px;
+    /* background: #ff0000; */
+}
+.header-list > li > a{
+    color:#fff;
+}
+.list-arrow{
+    /*  */
+    position: relative;
+}
+.sub-list{
+    position: absolute;
+    left:0px;
+    top:32px;
+    background: #fff;
+    padding: 10px;
+    border:1px solid #ccc;
+    border-top:none;
+    display: none;
+}
+.sub-list-tb{
+    width:72px;
+    line-height: 20px;
+}
+.sub-list > li > a{
+    color:#999;
+}
+/* class名为.list-arrow 的li  hover的时候  找到它里边class名为sub-list 的ul 显示 */
+.list-arrow:hover .sub-list{
+    display: block;
+}
+.list-arrow:hover{
+    background: #fff;
+}
+.list-arrow:hover > a{
+    color:#ff0036;
+    text-decoration: underline;
+}
+
+/* header 结束 */
+.sub-list .tb-list-baby:hover{
+
+     color:#ff0036;
+    text-decoration: underline;
+}
+.list-arrow:hover .arrow{
+    color:#ff0036;
+    transform: rotate(180deg);
+    transform-origin: 50% 25%;
+}
+.my-car{
+    font-size: 12px;
+}
+.my-phone{
+    font-size:12px;
+}
+.logo{
+    width:240px;
+    height:130px;
+    
+    margin: 1px 10px;
+    float:left;
+}
+.search-box{
+  
+   
+
+   float:left;
+   margin-top:50px;
+   margin-left:70px;
+}
+.search-content{
+    width: 623px;
+    height: 36px;
+    border:2px solid red;
+    color:black;
+}
+.search-input{
+    width: 491px;
+    height: 26px;
+    border:none;
+    text-indent:5px;
+    padding:5px 3px 5px 5px;
+    float:left;
+}
+.search-btn{
+    width:124px;
+    height: 36px;
+    color:#fff;
+    background-color: #ff0036;
+    font-size:18px;
+    border:none;
+    float:left;
+    font-weight:700;
+    letter-spacing: 5px;
+    text-align: center;
+}
+.search-list li{
+    float:left;
+    margin-top:3px;
+    font-size:14px;
+    color:#999999;
+}
+.search-list li.list-hot a{
+    color:red;
+}

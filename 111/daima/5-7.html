@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function Fab1(n){
+           if (n<=2){
+               return 1;
+           }
+           else return Fab1(n-1)+Fab1(n-2);
+       }
+       function Fab2(n){
+           if(n<=2) return 1;
+           var f1=1,f2=1,i,temp;
+           for(i=3;i<=n;i++){
+               temp=f1+f2;
+               f1=f2;
+               f2=temp;
+           }
+           return f2;
+       }
+       var  n
+       n=prompt("请输入n的值",0);
+       n=parseInt(n);
+       document.write("递归函数"+Fab1(n));
+       document.write("<br>");
+       document.write("非递归函数"+Fab2(n));
+      
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    var x;
+    var b,c,d;
+    for(x=1000;x<=9999;x++){
+       if(x%13==0){
+        b=Math.floor(x/10)%10;
+        c=Math.floor(x/100)%10;
+        d=Math.floor(x/1000);
+        if(b+c==d)  document.write(x);
+        
+       }
+    }
+    </script>
+    
+</body>
+</html>

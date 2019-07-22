@@ -1,0 +1,33 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1563334509230'); /* IE9 */
+  src: url('iconfont.eot?t=1563334509230#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAP0AAsAAAAACUAAAAOoAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDMgqFWIRdATYCJAMUCwwABCAFhG0HThvvBxEVnPfIfhyUm8405yxYfxpl1Lvv4IHqfN/Mzqab2YAVuKV/IZ7qJAVwAoPiCJ4gnQAmADbnemCjIsxQzj559IW0HaaX5ul/LlUzbYPNb7GARHnMf5c1lucoY2FeKB1AteLYg6y1UoG8DmA3qLavhwA0hamIaNGqQw4WCmM3AYjxY0YNwUo5UBVCgWV2gWMVYjUmllwiLwGr/J8Xb6guLJCYBsa+XUa2HI7z3P98jRHPxvu7NDTD+QDuJDCAioACMRUGxmOEhYoYaGVjhQNoLCRyqPWqPG/wfE02S6zfEKnNAMjN/OMZIFwY6CHZTlHBc78th4TnVeQQ8LyBiWpiDUlwvUzzGA3kAd6AcGNwSrKNG4ULJdweKxvwahVwjR7yDW4VHKQTmWWpeHJpuod3WSaR1p6lyXgqB+CkNNp48HjqkeN2JfOqLalS3k0ZYSbSpXPsZRvi67VeujGxyR7gqukDenkMby+9NAkbUrbdjCYc/fzj0Xz0zRQYJwC0K7tz4n5Tm/iGLU3OY8OUvfdU4uSwXcfjJ5YF+ZE9/Tm9Br1IT409wCs8Pb399Nnu1aLHymfMjY79jmbCi0svCmdCrudQEtl3N8nZF4cqZhYvylLKzoMY9IejIiaO4ny8EIqFjnK50lR9Wt92L3G797JazHE/ijwMX4xc0lv7Os8cnj51/NLr+Ip6UgZp/66/6NRBeIsWxo+nqJfJsQosgtBfPe17mui7spdDicWC17zFvdeC22rUrlESV2U+ezs1TlWrfmrWU1/QN75YbKrTdHWR987xfINety8gmIbxGmOsXAggr8h/gBGX2yCbNRLG3/M3DLt1feMgf8Nvlq0AuJ9zeILvyGY/MvILEDTW/Cuahl1K1RlOU8mdtlpOmuRwc1EqCxr4QyIhngxDRhu3gsAiGoMkF4XAwKIkXbErgolNTXBh0QQ0FWh9sk2YqRgI5QbKs4AAQYCDIPFxCgwCXKYr9mMwyc07cBEQBmh6ivA5bUoLRHs4MipBC/oPraHJWW45BO039O9BcVLni17IqU1DlZfZ8hUn5CEOSB9fizhwTCNciJvhMBBEpg6N5EEkNkXh0BflhsbZgSOjErSA/gOtocm58+WQ+/4b+veguIJSUXwhp3btQEVO2YB+xakR5VJekj6+RsQBjmkELoQPB7NAQMRbdWgkJ3TIxYaC6ueaYj49Od7jVYDGeI4ppDCEEqZwsR2mWqumah0DTbhJmfbnUZ8JJpnNAA==') format('woff2'),
+  url('iconfont.woff?t=1563334509230') format('woff'),
+  url('iconfont.ttf?t=1563334509230') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1563334509230#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-caidan1:before {
+  content: "\e62f";
+}
+
+.icon-phone:before {
+  content: "\e60f";
+}
+
+.icon-caidan:before {
+  content: "\e691";
+}
+
+.icon-icon-test:before {
+  content: "\e63b";
+}
+

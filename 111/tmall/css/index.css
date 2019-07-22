@@ -1,0 +1,433 @@
+/* header 开始 */
+#header{
+    height: 32px;
+    line-height: 32px;
+    background: #a9180a;
+    border-bottom:1px solid #a9180a;
+}
+.header-login{
+    /* background: #0f0; */
+    height: 32px;
+    /* line-height: 32px; */
+    float: left;
+}
+.header-login span,.header-login a{
+    color:#fff;
+    font-size: 12px;
+}
+.header-login a{
+    /* 去掉a标签的下划线 */
+    text-decoration: none;
+    padding:0 10px 0 20px;
+}
+.header-list{
+    float:right;
+    /* background: #00ffff; */
+}
+/* 子代选择器 */
+.header-list > li{
+    float: left;
+    padding:0 14px 0 10px;
+    /* background: #ff0000; */
+}
+.header-list > li > a{
+    color:#fff;
+}
+.list-arrow{
+    /*  */
+    position: relative;
+}
+.sub-list{
+    position: absolute;
+    left:0px;
+    top:32px;
+    background: #fff;
+    padding: 10px;
+    border:1px solid #ccc;
+    border-top:none;
+    display: none;
+}
+.sub-list-tb{
+    width:72px;
+    line-height: 20px;
+}
+.sub-list > li > a{
+    color:#999;
+}
+/* class名为.list-arrow 的li  hover的时候  找到它里边class名为sub-list 的ul 显示 */
+.list-arrow:hover .sub-list{
+    display: block;
+}
+.list-arrow:hover{
+    background: #fff;
+}
+.list-arrow:hover > a{
+    color:#ff0036;
+    text-decoration: underline;
+}
+
+/* header 结束 */
+.sub-list .tb-list-baby:hover{
+
+     color:#ff0036;
+    text-decoration: underline;
+}
+.list-arrow:hover .arrow{
+    color:#ff0036;
+    transform: rotate(180deg);
+    transform-origin: 50% 25%;
+}
+.my-car{
+    font-size: 12px;
+}
+.my-phone{
+    font-size:12px;
+}
+.logo{
+    width:240px;
+    height:130px;
+    
+    margin: 1px 10px;
+    float:left;
+}
+.search-box{
+  
+   
+
+   float:left;
+   margin-top:50px;
+   margin-left:70px;
+   overflow: hidden;
+}
+.search-content{
+    width: 623px;
+    height: 36px;
+    border:2px solid red;
+    color:black;
+}
+.search-input{
+    width: 491px;
+    height: 26px;
+    border:none;
+    text-indent:5px;
+    padding:5px 3px 5px 5px;
+    float:left;
+}
+.search-btn{
+    width:124px;
+    height: 36px;
+    color:#fff;
+    background-color: #ff0036;
+    font-size:18px;
+    border:none;
+    float:left;
+    font-weight:700;
+    letter-spacing: 5px;
+    text-align: center;
+}
+.search-list li{
+    float:left;
+    margin-top:3px;
+    padding: 0 12px;
+    position:relative;
+    color:#999999;
+    left:-13px;
+}
+.search-list li::after{
+    content:'';
+    width:1px;
+    height:15px;
+    background:#999999;
+    position: absolute;
+    left:0px;
+    top:4px;
+    overflow: hidden;
+}
+.search-list li a{
+    color:#999999;
+    font-size:14px;
+}
+.search-list li.list-hot a{
+    color:#ff0036;
+}
+.nav{
+    padding-left:200px;
+    overflow:hidden;
+    width:1000px;
+
+}
+.nav li{
+    float:left;
+}
+.nav li img{
+  width:100px;
+  height:30px;
+  margin-top: 3px;
+}
+.nav a{
+    font-size:16px;
+    font-weight:500;
+    height:35px;
+    line-height:35px;
+    padding:0 8px;
+    color:#333;
+}
+
+.slide-box{
+    height:500px;
+    background-color:#ccc;
+
+}
+.slide-box wrapper{
+    height:500px;
+    background: #0000ff;
+    position: relative;
+}
+.menu-box{
+    position: absolute;
+    top:175px;
+    left:16px;
+    background: rgba(0,0,0,0.55);
+     width:200px;
+    height:535px;
+}
+
+.img-box{
+    height:500px;
+    overflow:hidden;
+
+}
+.img-box img{
+    width:1230px;
+}
+.menu-title{
+    color:#fff;
+    height:35px;
+    line-height:35px;
+    background:#ff0036;
+    font-size:16px;
+    font-weight:700;
+}
+.menu-title .icon-caidan1{
+    margin: 0 8px 0 14px;
+    font-size:18px;
+}
+.slide-box{
+    border-top:2px solid #ff0036;
+}
+.main-list{
+    height:31.2px;
+    line-height: 31.2px;
+}
+.main-list .list-line{
+    color:#fff;
+}
+.main-list > a{
+    color:#fff;
+    font-size:14px;
+}
+
+.main-list .icon-icon-test{
+    font-size:12px;
+}
+.list-icon{
+    margin: 0 4px 0 14px;
+    opacity:0.5;
+}
+.main-list:hover{
+    background: #fff;
+}
+.main-list:hover .list-line,.main-list:hover .list-icon,.main-list:hover > a{
+    color:#e54077;
+}
+.main-list:hover .list-icon{
+    opacity:1;
+}
+.menu-sub-list{
+    width:850px;
+    height:500px;
+    background: #fff;
+    position: absolute;
+    left:200px;
+    top:0px;
+    display:none;
+}
+.main-list-box{
+    position:relative;
+}
+.sub-list-left{
+    width:640px;
+    height:500px;
+    background: #ff0000;
+    float:left;
+    padding:19px 30px;
+    box-sizing: border-box;
+}
+.sub-list-right{
+    width:210px;
+    height: 500px;
+    background: #FAFAFA;
+    padding:10px;
+    float: right;
+    box-sizing: border-box;
+    
+}
+.sub-list-right img{
+    width: 70px;
+}
+.main-list:hover .menu-sub-list{
+    display: block;
+}
+.brand-box{
+    margin-top:35px;
+}
+.brand-list{
+    width:490px;
+    float:left;
+    margin-left:10px;
+}
+.brand-list-1{
+  width:234px;
+  margin-left:0px;
+}
+.brand-list-1 img{
+ width: 234px;
+ height:321px;
+}
+.brand-list-2 img{
+  width:490px;
+  height:321px;
+}
+
+ .brand-head{
+     
+     height:55px;
+     line-height:55px;
+     background:#fff;
+    }
+    body{
+        background:#f5f5f5;
+
+    }
+.brand-head-cn{
+    font-size:18px;
+    color:#333333;
+    margin:0 0 0 10px;
+    font-weight: bold;
+}
+.brand-head-en{
+    font-size:14px;
+    color:#333333;
+    font-weight:bold;
+}
+.brand-head-more{
+    float:right;
+    color:#666666;
+    font-size:16px;
+    margin-right:10px;
+    background: url(../images/more.png) no-repeat right center;
+    background-size:15px 15px;
+    padding:0 12px 0 0;
+}
+.brand-list-1 .brand-head-more{
+    height:55px;
+    width:23px;
+}
+.brand-list:hover{
+    opacity:0.5;
+
+}
+.brand-list-3 img{
+    width:490px;
+    height:321px;
+    
+}
+.brand-list-2 .brand-head-more{
+    width:40px;
+
+}
+.brand-logo{
+    overflow: hidden;
+}
+.brand-logo-list{
+    float:left;
+    width:122px;
+    height:108px;
+    text-align: center;
+    position: relative;
+   
+}
+.brand-logo-list img{
+    width:100px;
+    height:50px;
+    margin-top:29px;
+}
+.logo-list-mask{
+  width:122px;
+  height:108px;
+  position: absolute;
+  left:0;
+  top:0;
+  background: rgba(0,0,0,0.8);
+  opacity:0;
+
+}
+.logo-mask-name{
+    color:#fff;
+    margin-top:37px;
+    font-size:10px;
+
+    
+}
+.logo-list-btn{
+    font-size:12px;
+    color:#fff;
+    line-height:15px;
+    background-color:#FF0036;
+    border-radius:10px;
+    display:inline-block;
+    margin:10px auto 0px;
+}
+.brand-logo-list:hover .logo-list-mask{
+    opacity: 1;
+
+}
+.mart-box{
+    margin-top:20px;
+}
+.mart-head-logo{
+    width:214px;
+    height:25px;
+    float:left;
+    display:block;
+}
+.mart-head-list{
+    float:right;
+    
+}
+.mart-head-list li{
+    float:left;
+    height:21px;
+    line-height:21px;
+    padding:5px 10px;
+    font-size:14px;
+    color:#000000;
+}
+.mart-head-list a{
+    font-size: 14px; 
+    color: #000;
+    border-bottom:1px solid #f5f5f5;
+}
+.mart-head-list li:hover a{
+    border-bottom:1px solid #000;
+}
+.mart-body img{
+    height:618px;
+   width:235px; 
+  
+}
+
+.clearfix:after{
+    content:'';
+    clear:both;
+}

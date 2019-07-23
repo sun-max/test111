@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style> 
+
+    *{
+        margin:0px;
+        padding:0px;
+
+    }
+    #btns{
+        list-style:none;
+    
+    } 
+    #btns li.active{
+            background: #6D84B4;
+            color:#fff;
+        }
+    ul{
+        overflow:hidden;
+    }
+    #container{
+        margin:200px;
+    }
+   #btns li{
+       float:left;
+       margin-right:10px;
+       background: #f1f1f1;
+       width:50px;
+       height:30px;
+       border: 1px solid #898989;
+       font-size:14px;
+       line-height:30px;
+       text-align: center;
+   }
+  
+   #content{
+       
+       width:300px;
+       height:150px;
+       border:1px solid #898989;
+       font-size:14px;
+   } 
+   #content .selected{
+       display:block;
+   }
+   #content div{
+    display:none;
+   }
+  
+  
+</style>
+<body>
+    <div id="container">
+        <ul id="btns">
+            <li class="active">时事</li>
+            <li>体育</li>
+            <li>娱乐</li>
+            
+        </ul>
+        <div id = content >
+            <div class="selected" >时事</div>
+            <div >体育</div>
+            <div >娱乐</div>
+        </div>
+    </div>
+    <script>
+        var oUl=document.getElementById("btns");
+        var aLi=oUl.getElementsByTagName("li");
+        var oCentent=document.getElementById("content");
+        var aDiv=oCentent.getElementsByTagName("div");
+        
+      
+     
+      
+          for(var i=0;i<aLi.length;i++){
+              aLi[i].index = i;
+              aLi[i].onclick=function(){ 
+                  for(var j=0;j<aLi.length;j++){
+                      aLi[j].className="";
+                     aDiv[j].className="";
+                  }
+            this.className="active";
+          aDiv[this.index].className="selected";
+          
+            
+            
+          
+
+      }
+      }
+        
+
+      
+    
+    
+    </script>
+</body>
+</html>

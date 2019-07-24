@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin:0px;
+        padding:0px;
+    }
+    ul{
+        list-style:none;
+    }
+ #container{
+     width:750px;
+     margin:100px auto;
+     position:relative;
+ }
+ #img-box a{
+     display:none;
+ }
+ #img-box .selected{
+     display:block;
+ }
+ #btn-box{
+     position:absolute;
+     bottom:20px;
+     right:10px;
+ } 
+ #arrow-box{
+     position:absolute;
+     bottom:20px;
+     left:10px;
+   
+ }
+ #btn-box li,#arrow-box li{
+     float:left;
+     margin-right:10px;
+     background: rgba(0,0,0,0.5);
+     height:20px;
+     width:20px;
+     line-height:20px;
+     text-align: center;
+     font-size:14px;
+     color:#fff;
+     border-radius: 5px;
+     cursor:pointer;
+ }
+#btn-box .active{
+  background:crimson;
+}
+
+</style>
+<body>
+        <div id="container">
+        <div id="img-box">
+        <a class="selected" href="#"><img  src="picture/1.jpg" alt=""></a>
+        <a href="#"><img src="picture/2.jpg" alt=""></a>
+        <a href="#"><img src="picture/3.jpg" alt=""></a>
+        <a href="#"><img src="picture/4.jpg" alt=""></a>
+        <a href="#"><img src="picture/5.jpg" alt=""></a>
+        </div>
+        <ul id="arrow-box">
+            <li id="prev">&lt;
+            </li>
+            <li id="next">&gt;</li>
+        </ul>
+            
+        <ul id="btn-box">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+          
+
+        </div>
+          
+        <script>
+          var Btn = document.getElementById('btn-box');
+          var aBtn = Btn.getElementsByTagName('li');
+          var Img = document.getElementById("img-box");
+          var aImg = Img.getElementsByTagName('a');
+          //记录当前显示图片的索引
+          var iNow=0;
+          var  iPrev=aBtn.length-1;;
+          var oNext = document.getElementById('next'); 
+          var oPrev = document.getElementById('prev');
+          for (var i=0;i<aBtn.length;i++){
+              aBtn[i].idx=i;
+              aBtn[i].onclick=function(){
+                 change(this.idx);
+                 iNow=this.idx;
+                 iPrev=this.idx;
+              
+            }
+        }
+           oNext.onclick=function(){
+               iNow++;
+               if(iNow == 5) iNow = 0;
+               change(iNow);
+               
+           }
+           
+           oPrev.onclick=function(){
+              iPrev--;
+               if(iPrev==-1)
+                   iPrev=aBtn.length-1;
+               
+              change(iPrev);
+               
+           }
+        
+           function change(index){
+            for(var i=0;i<aBtn.length;i++){
+                      aBtn[i].className="";
+                      aImg[i].className="";
+             }
+                  aBtn[index].className="active";
+                  aImg[index].className="selected";
+                  
+              }
+           
+
+        
+    
+        </script>
+        
+ 
+</body>
+</html>

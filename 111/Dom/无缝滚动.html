@@ -19,13 +19,23 @@
      margin:100px auto;
      
      position:relative;
+     overflow: hidden;
+     height:291px;
  }
- #img-box  a{
-    display:none;
+ #img-box{
+     width:4500px;
+     overflow: hidden;
+     position:absolute;
+     left:0px;
+     top:0px;
+     /* transition: left 1s linear ; */
  }
- #img-box .selected{
-     display:block;
+ #img-box a{
+   float:left;
  }
+ #img-box a img{
+     display: block;
+        }
  #btn-box{
      position:absolute;
      bottom:20px;
@@ -55,14 +65,16 @@
 }
 
 </style>
+<script src="jslib.js"></script>
 <body>
         <div id="container">
         <div id="img-box">
-        <a class="selected" href="#"><img  src="picture/1.jpg" alt=""></a>
+        <a href="#"><img  src="picture/1.jpg" alt=""></a>
         <a href="#"><img src="picture/2.jpg" alt=""></a>
         <a href="#"><img src="picture/3.jpg" alt=""></a>
         <a href="#"><img src="picture/4.jpg" alt=""></a>
         <a href="#"><img src="picture/5.jpg" alt=""></a>
+       <a href="#"><img  src="picture/1.jpg" alt=""></a>  
         </div>
         <ul id="arrow-box">
             <li id="prev">&lt;
@@ -88,43 +100,54 @@
           var aImg = Img.getElementsByTagName('a');
           //记录当前显示图片的索引
           var iNow=0;
-          var  iPrev=aBtn.length-1;;
+          var  iPrev=aBtn.length;
           var oNext = document.getElementById('next'); 
           var oPrev = document.getElementById('prev');
-          for (var i=0;i<aBtn.length;i++){
-              aBtn[i].idx=i;
-              aBtn[i].onclick=function(){
-                 change(this.idx);
-                 iNow=this.idx;
-                 iPrev=this.idx;
-              
-            }
+          
+            for(var i=0; i<aBtn.length; i++){
+            aBtn[i].idx = i;
+            aBtn[i].onclick = function(){
+                iNow=this.idx;
+                iPrev=this.idx;
+                change(this.idx);
         }
-           oNext.onclick=function(){
-               iNow++;
-               if(iNow == 5) iNow = 0;
-               change(iNow);
-               
-           }
-           
-           oPrev.onclick=function(){
-              iPrev--;
-               if(iPrev==-1)
-                   iPrev=aBtn.length-1;
-               
-              change(iPrev);
-               
-           }
+    }
+    oNext.onclick=function(){
+        iNow++;
+        if(iNow==aImg.length){
+            
+            Img.style.left = "0px";
+            iNow=1;
+        }
+        change(iNow);
+    }
+    oPrev.onclick=function(){
+        iPrev--;
+        if(iPrev==4||iPrev==-1){
+            Img.style.left="-3750px";
+            iPrev=aBtn.length-1;
+        }
+        change(iPrev);
+    }  
+    
+    
+    
+     
+            function change(index){
+                for(var j=0;j<aBtn.length; j++){
+                    aBtn[j].className ="";
+                }
+              
+                aBtn[index==5?0:index].className = "active";
+                // 0  1     2         n
+                // 0   -750  -2*750   -n*750
+                // Img.style.left = -index*750 +"px";
+                animate(Img,{
+                    left: -index*750
+                })
+            }
         
-           function change(index){
-            for(var i=0;i<aBtn.length;i++){
-                      aBtn[i].className="";
-                      aImg[i].className="";
-             }
-                  aBtn[index].className="active";
-                  aImg[index].className="selected";
-                  
-              }
+           
            
 
         

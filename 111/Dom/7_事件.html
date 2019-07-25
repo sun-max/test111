@@ -10,13 +10,21 @@
     <div id="div1">222</div>
     <script>
         var oDiv=document.getElementById("div1");
-        oDiv.onclick=function(){
-            alert("111");
+        // oDiv.onclick=function(){
+        //     alert("111");
+        // }
+    //    document.onkeyup=function(e){
+    //         // console.log("111");
+    //         // console.log(e.keyCode);
+    //         // if(e.keyCode==13)
+    //         //   console.log("0000");
+    //         //   else console.log(e.keyCode);
+
+              
+    //     }
+        document.onmouseover=function(e){
+            console.log(e.clientX,e.clientY);
         }
-        document.keyup=function(e){
-            console.log("111");
-        }
-        
         </script>
 </body>
 </html>

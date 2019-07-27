@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='container'>
+    <img id='img' src="../fallen leaves/img/1.png" alt="">
+    <img  id='img' src="../fallen leaves/img/2.png" alt="">
+    <img id='img'  src="../fallen leaves/img/3.png" alt="">
+    <img  id='img' src="../fallen leaves/img/4.png" alt="">
+</div>
+
+  <script>
+      //可视区的宽度
+      var screenWidth=document.documentElement.clientWidth || document.body.clientWidth;
+      var aImg=document.getElementsByTagName('img');
+   function Leaf(){
+       
+       this.pos={
+           left:Math.random()*(screenWidth-this.width),
+           top:0
+       }
+       this.width=Math.random()*50+100;//100-150
+       this.speed=5;
+       var oImg=new Image();
+       oImg.src = "img/"+(Math.floor(Math.random()*4)+1)+".png";
+       oImg.style.width=this.width + 'px';
+       oImg.style.left=this.pos.left +'px';
+       oImg.style.top=this.pos.top + 'px';
+       this.img=oImg
+   }
+   var leaf = new Leaf();
+   document.body.appendChild(leaf.img);   
+  </script>
+</body>
+</html>

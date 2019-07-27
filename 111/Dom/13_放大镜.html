@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+
+    }
+#small-box{
+    position:relative;
+}
+    #drag{
+      position:absolute;
+      width:200px;
+      height:200px;
+      top:0;
+      left:0;
+      background: rgba(255,255,255,0.5);
+      display:none;
+    }
+#big-box{
+    display:none;
+}
+#small-box,#big-box{
+    width:400px;
+    height:400px;
+    float:left;
+     overflow: hidden;
+}
+#big-box{
+            display: none;
+            position: relative;
+        }
+#img-box{
+            position: absolute;
+            left:0;
+            top:0;
+        }
+</style>
+<body>
+    <div id="container">
+        <div id='small-box'>
+            <img src="picture/small.jpg" alt=""> 
+            <span id='drag'>
+            </span>
+        </div>
+      
+        <div id='big-box'>
+                <img id='img-box' src="picture/big.jpg" alt="">
+        </div>
+
+    </div>
+    <script>
+        var oSmallbox = document.getElementById('small-box');
+        var oDrag = document.getElementById('drag');
+        var oBigbox=document.getElementById('big-box');
+        var oImgbox = document.getElementById('img-box');
+        oSmallbox.onmouseover=function(){
+            oBigbox.style.display="block";
+            oDrag.style.display = "block";
+        }
+       oSmallbox.onmousemove=function(e){
+           e=e||window.event;
+        
+           oDrag.style.left=e.clientX-oDrag.offsetWidth/2+'px';
+           oDrag.style.top=e.clientY-oDrag.offsetHeight/2+'px';
+           if(oDrag.offsetLeft <= '0'){
+               oDrag.style.left = "0";
+           }
+           if(oDrag.offsetTop<0) oDrag.style.top="0px";
+           var maxLeft=oSmallbox.offsetWidth-oDrag.offsetWidth;
+           if(oDrag.offsetLeft>=maxLeft) oDrag.style.left=maxLeft+'px';
+           var maxTop=oSmallbox.offsetHeight-oDrag.offsetHeight;
+           if(oDrag.offsetTop>=maxTop) oDrag.style.top=maxTop+'px';
+
+
+         //小图和大图水平方向可以走的最大的距离
+         var smalldisX = oSmallbox.offsetWidth - oDrag.offsetWidth;
+         var bigdisX = oImgbox.offsetWidth - oBigbox.offsetWidth;
+          //小图和大图竖直方向可以走的最大的距离
+         var smalldisY = oSmallbox.offsetHeight - oDrag.offsetHeight;
+         var bigdisY = oImgbox.offsetHeight - oBigbox.offsetHeight;
+         //x方向的比例
+         var xPro = oDrag.offsetLeft/smalldisX;
+         oImgbox.style.left = - bigdisX * xPro + 'px'; 
+          //y方向的比例
+        
+          oImgbox.style.top = - oDrag.offsetTop/smalldisY*bigdisY + 'px';
+
+       }
+       oSmallbox.onmouseout=function(){
+            oBigbox.style.display="none";
+            oDrag.style.display="none";
+        }
+        
+            </script>
+    
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    
+    *{
+        margin:0;
+        padding:0;
+    }
+  #div1,#div2{
+      width:100px;
+      height:40px;
+      background:black;
+      color:#fff;
+      line-height:40px;
+      font-size:18px;
+      border:1px solid black;
+      
+      position:relative;
+  }
+
+ ul{
+     width:100px;
+     height:70px;
+     display:none;
+ }
+  
+</style>
+<body>
+    <div>
+    <div id=div1>
+        <span>管理区</span>
+      
+    </div> 
+    <ul id='ul1'>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+   
+    <div id=div2>
+        
+            <span>交流区</span>  
+            
+      </div>  
+      <ul id='ul2'>
+            <li>111</li>
+            <li>222</li>
+            <li>333</li>
+        </ul>
+    
+</div>
+<script>
+    var oDiv1=document.getElementById('div1');
+    var oDiv2=document.getElementById('div2');
+    var oUl1=document.getElementById('ul1');
+    var oUl2=document.getElementById('ul2');
+    //oUl1.style.display内联样式初始值为空;
+    oDiv1.onmousedown=function(){
+       if(oUl1.style.display=='none'||oUl1.style.display=='')
+        oUl1.style.display="block";
+        else oUl1.style.display="none";
+
+    }
+    oDiv2.onclick=function(){
+        if(oUl2.style.display=='none'||oUl2.style.display=='')
+        oUl2.style.display="block";
+        else oUl2.style.display="none";
+
+    }
+</script>
+</body>
+</html>

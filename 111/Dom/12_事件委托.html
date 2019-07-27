@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id='btn'>click</button>
+    <ul id='ul1'>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+    <script>
+       var oBtn=document.getElementById('btn');
+       var oUl = document.getElementById('ul1');
+       var aLi = oUl.getElementsByTagName('li');
+       for(var i=0;i<aLi.length;i++){
+           aLi[i].onclick=function(){
+               console.log(this.innerHTML);
+           }
+       }
+       oBtn.onclick = function(){
+            // 创建dom元素
+            var oLi = document.createElement('li');
+            oLi.innerHTML = Math.random();
+            // 在 ul的内部的后边插入元素
+            oUl.appendChild(oLi); }
+    </script>
+</body>
+</html>

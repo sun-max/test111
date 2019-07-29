@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    perspective: 800px;
+    background: #000000;
+}
+#container{
+    width:200px;
+    height:200px;
+    margin:200px auto;
+    /* border:1px dotted #ffffff; */
+    position:relative;
+    transform-style:preserve-3d;
+    animation: run 4s linear infinite forwards ;
+}
+#container img:hover{
+ opacity: 0.5;
+}
+@keyframes run{
+    100%{
+        transform: rotateX(360deg)  rotateY(360deg) rotateZ(360deg) 
+    }
+}
+#container div{
+    width: 200px;
+    height: 200px;
+    background: rgba(255,255,255,0.6);
+    border-radius:10px;
+    
+    position:absolute;
+    left:0;
+    top: 0;
+}
+#container img{
+    width:200px;
+    height:200px;
+}
+.one{
+  transform: rotateY(-90deg) translateZ(100px);
+}
+.two{
+    transform: rotateY(90deg) translateZ(100px);
+}
+.three{
+    transform: rotateX(90deg) translateZ(100px)
+}
+.four{
+    transform: rotateX(-90deg) translateZ(100px)
+}
+.five{
+    transform:rotateY(180deg) translateZ(100px);
+}
+.six{
+    transform:translateZ(100px);
+}
+</style>
+<body>
+    <div id='container'>
+        <div class='one'><img src="1.jpg" alt=""></div>
+         <div class='two'><img src="2.jpg" alt=""></div>
+        <div class='three'><img src="3.jpg" alt=""></div>
+        <div class='four'><img src="4.png" alt=""></div>
+        <div class='five'><img src="5.jpg" alt=""></div>
+        <div class='six'><img src="6.jpg" alt=""></div>
+    </div>
+</body>
+</html>

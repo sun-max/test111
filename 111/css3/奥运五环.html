@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #container{
+        position:relative;
+    }
+#div1::after{
+    content:"";
+    width:200px;
+    height:200px;
+    border:10px solid blue;
+    display:block;
+    border-radius:50%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:1;
+
+    
+   
+    
+}
+#div1{
+    width:200px;
+    height:200px;
+    border:10px solid blue;
+    border-radius:50%;
+}
+
+#div2{
+    width:200px;
+    height:200px;
+    border:10px solid black;
+    border-radius:50%;
+
+}
+#div2::after{
+    content:"";
+    width:200px;
+    height:200px;
+    border:10px solid black;
+    display:block;
+    border-radius:50%;
+    position:absolute;
+    top:0px;
+    left:230px;
+    z-index:  1;
+    border-left-color:transparent;
+   
+    
+}
+#div3{
+    width:200px;
+    height:200px;
+    border:10px solid red;
+    border-radius:50%;
+
+}
+#div3::after{
+    content:"";
+    width:200px;
+    height:200px;
+    border:10px solid red;
+    display:block;
+    border-radius:50%;
+    position:absolute;
+    top:0px;
+    left:460px;
+    z-index:  1;
+    border-left-color:transparent;
+   
+    
+}
+#container div{
+    float:left;
+    margin-right: 10px;
+   
+   
+}
+#container{
+    overflow: hidden;
+}
+#box div{
+    float:left;
+    margin-right:10px;
+  
+
+}
+#box{  margin-top:-105px;
+    margin-left:105px;
+}
+
+
+
+
+#div4{
+    width:200px;
+    height:200px;
+    border:10px solid yellow;
+    border-radius:50%;
+
+}
+#div4::after{
+    content:"";
+    width:200px;
+    height:200px;
+    border:10px solid yellow;
+    display:block;
+    border-radius:50%;
+    position:absolute;
+    top:115px;
+    left:105px;
+
+      z-index:1;
+    border-top-color:transparent;
+    border-right-color:transparent;
+    
+}
+#div5{
+    width:200px;
+    height:200px;
+    border:10px solid green;
+    border-radius:50%;
+
+}
+#div5::after{
+    content:"";
+    width:200px;
+    height:200px;
+    border:10px solid green;
+    display:block;
+    border-radius:50%;
+    position:absolute;
+    top:115px;
+    left:336px;
+    z-index:1;
+    border-top-color:transparent;
+    border-right-color:transparent;
+   
+   
+    
+}
+
+</style>
+<body>
+    <div id='container'>
+    
+    
+    <div id='div1'></div>
+    <div id='div2'></div>
+    <div id='div3'></div></div>
+    <div id='box'>
+    <div id='div4'></div>
+    <div id='div5'></div></div>
+</body>
+</html>

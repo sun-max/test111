@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src='jquery-1.12.4.js'></script>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+        </style>
+</head>
+<body>
+    <div id="div1">aaa</div>
+    <input type="text">
+    <button>click</button>
+    <script>
+    //   $('#div1').one('click',function(){
+    //     console.log('hahaha');
+    //   })
+    // $('input').on('focus',function(){
+    //     console.log('hahahha')
+    // })
+    // $('button').on('click',function(){
+    //     // $('input').trigger('focus');//会获取焦点
+    //     $('input').triggerHandler('focus');//不会获取焦点
+    // })
+    $('#div1').hover(function(){//鼠标滑入
+        console.log("1111");
+        $(this).css('background','blue');
+    },function(){ //鼠标滑出
+        console.log('2222');
+        $(this).css('background','yellow');
+    })
+    </script>
+</body>
+</html>

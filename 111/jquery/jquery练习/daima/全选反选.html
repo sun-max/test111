@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>你爱好的运动是？</h3>
+    <div id='container'>
+     <input type="checkbox" name="items" value="足球">足球
+     <input type="checkbox" name="items" value="篮球">篮球
+     <input type="checkbox" name="items" value="羽毛球">羽毛球
+     <input type="checkbox" name="items" value="乒乓球">乒乓球
+    </div>
+    <button id='checkedall'>全选</button>
+    <button id='checkedno'>全不选 </button>
+    <button id='checkedrev'>反选</button>
+    <script src='jquery-1.12.4.js'></script>
+    <script>
+     $('#checkedall').on('click',function(){
+         $(':checkbox').prop('checked',true);
+
+     })
+     $('#checkedno').on('click',function(){
+         $(':checkbox').prop('checked',false);
+         
+     })
+     $('#checkedrev').on('click',function(){
+        $(':checkbox').each(function(index,elem){
+        elem.checked=!elem.checked;
+        })
+     })
+    </script>
+</body>
+</html>

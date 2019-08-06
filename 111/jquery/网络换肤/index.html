@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jquery练习/jquery-1.12.4.js"></script>
+<style>
+ *{
+     margin: 0;
+     padding: 0;
+ }
+ ul{
+     list-style: none;
+     overflow: hidden;
+ }
+ li{
+     width:15px;
+     height:15px;
+     background:lawngreen;
+     margin-left:10px;
+     float:left;
+     background: url(theme.gif) 0 0 no-repeat;
+
+ }
+ #skin_0{
+     background-position: 0 0;
+ }
+ .news_skin_0{
+    background: #b1b1b1;
+ }
+ .news_skin_1{
+            background: #b4d61e;
+        }
+        .news_skin_2{
+            background: #faab1a;
+        }
+        .news_skin_3{
+            background: #08bece;
+        }
+        .news_skin_4{
+            background: #e44c79;
+        }
+ #skin_1{
+     background-position: -20px 0;
+ }
+ #skin_2{
+     background-position: -40px 0;
+ }
+ #skin_3{
+     background-position: -60px 0;
+ }
+ #skin_4{
+     background-position: -80px 0;
+ }
+ #skin_0.selected{
+     background-position:0 -15px;
+ }
+ #skin_1.selected{
+     background-position:-20px -15px;
+ }
+ #skin_2.selected{
+     background-position:-40px -15px;
+ }
+ #skin_3.selected{
+     background-position:-60px -15px;
+ }
+ #skin_4.selected{
+     background-position:-80px -15px;
+ }
+</style>
+</head>
+
+<body>
+    <ul>
+        <li id='skin_0' class='selected'></li>
+        <li id='skin_1' ></li>
+        <li id='skin_2'></li>
+        <li id='skin_3' ></li>
+        <li id='skin_4'></li>
+    </ul>
+    <div class='news news_skin_0'>新闻</div>
+    <div class='news news_skin_0'>娱乐</div>
+</body>
+<script>
+  $('li').on('click',function(){
+     $(this).addClass('selected').siblings().removeClass('selected');
+        var idx = $(this).index();
+        $('.news').attr('class','news news_skin_'+idx);
+        setCookie('skin','skin_'+index,30);
+ })
+ var skin = getCookie('skin');
+ $('#'+skin).triggerHandler('click');
+ function setCookie(attr,value,day){
+            var str = "";
+            str += attr+"="+value+";";  //"age=22;"
+            if(day){ //传day   "age=22;expires="+date;
+                var date = new Date();
+                var today = date.getDate();
+                date.setDate(today+day);
+                str += "expires="+date;
+            }
+            document.cookie = str;
+        }
+        function getCookie(key){
+            var str = document.cookie; //"name=zs; haha=1111; nameAA=lisi"
+            var arr = str.split('; '); //["name=zs","haha=1111","nameAA=lisi"]
+            for(var i=0; i<arr.length; i++){
+                var arr1 = arr[i].split('=');   //["name","zs"]
+                if(arr1[0] == key){
+                    return arr1[1];
+                }
+            }
+            return "";
+        }
+</script>
+</html>

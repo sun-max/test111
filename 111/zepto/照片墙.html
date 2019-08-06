@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    
+
+    <style>
+        body{
+            background:#000;
+        }
+    *{
+        margin: 0;
+        padding: 0;
+        touch-action: none;
+    }
+#img-box{
+        list-style:none;
+        display:flex;
+        flex-wrap: wrap;
+       
+
+    }
+ #img-box img{
+            width:25%;
+            box-sizing: border-box;
+            border-right:1px solid #000;
+            border-bottom:1px solid #000;
+    }
+    #big{
+        position:absolute;
+        top: 0;
+        left: 0;
+        background:#000 url(img/1.jpg) center center no-repeat;
+        width:100%;
+        height:100%;
+        background-size:contain;
+        display:none;
+
+
+    }
+    </style>
+</head>
+<body>
+    <script src="zepto.js"></script>
+    <script src="touch.js"></script>
+
+    <div id='img-box'></div>
+    <div id='big'></div>
+    <script>
+    var iNow = 0;
+    for(var i=0;i<24;i++){
+        $('<img src="img/thumbs/'+(i+1)+'.jpg"></img>').appendTo('#img-box');
+    
+    }
+   $('#img-box img').on('click',function(){
+       $('#big').show();
+      var idx=$(this).index();
+       $('#big').css("background-image","url(img/"+ (idx+1) +".jpg)");
+       iNow = $(this).index();
+   })
+   $('#big').on('click',function(){
+       $(this).hide();
+   }).on('swipeLeft',function(){
+       iNow++;
+       if(iNow == $('#img-box img').size()){
+           iNow=0;
+       }
+       console.log(iNow)
+       $('#big').css("background-image","url(img/"+ (iNow+1) +".jpg)")
+   }).on('swipeRight',function(){
+            iNow--;
+            if(iNow == -1){
+                iNow = $('#img-box img').length-1;
+            }
+            $('#big').css("background-image","url(img/"+ (iNow+1) +".jpg)")
+        })
+
+   
+    
+    </script>
+</body>
+</html>

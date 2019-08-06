@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.变量提升 当前作用域的上边 定义了但没有赋值，返回值为undefined
+    // console.log(a);
+    // var a=10;
+     // let与var的区别 let没有变量提升
+    // console.log(b);
+    // let b=10;
+   
+    //2.let不可以重复命名，var可以但会被覆盖
+    // var a=10;
+    // var a=20;
+    // let b=10;
+    // let b=20;
+    
+    //3.var分为全局作用域和函数作用域
+    //let多了一个块级作用域，遇到花括号里面let一个变量，花括号外面会访问不到
+    // var  m=5;
+    // if(m==5){
+    //     var  n=100;
+    // }
+    // console.log(n);
+    // let  m=5;
+    // if(m==5){
+    //     let  n=100;
+    // }
+    // console.log(n);
+    
+    
+    // var x=10;
+    // function a(){
+    //     //函数中的x会在当前函数作用域里发生变量提升，返回值为undefined
+    //     console.log(x);
+    //     var x=20;
+    // }
+    // function a(){
+    //     //此时返回值为10
+    //     console.log(x);
+    //      x=20;
+    // }
+    
+    var x=10;
+    function a(){
+        //4.let在作用域中不允许同名的作用域进来，自己的x还未定义，为临时失效区
+        console.log(x);
+        let x=20;
+    }
+
+    
+    </script>
+</body>
+</html>

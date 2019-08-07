@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //成员是惟一的，没有重复的值
+    let x=new Set([1,2,3,4]);
+    console.log(x);
+
+    var arr = [1,2,3,4,6,3,7,4,5];
+    //数组去重
+    var y = new Set(arr); //set为类数组
+    y.add(10);
+    // y.clear();
+    y.delete(3);
+    console.log(y.size);
+    var arr2 = [...y];
+   var arr3 =  Array.from(y);
+   console.log(arr2,arr3);
+   console.log(y);
+    
+    </script>
+    
+</body>
+</html>

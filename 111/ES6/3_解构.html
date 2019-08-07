@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--从数组或对象中提取值，对变量进行赋值，称为解构
+        字符串，函数也可以解构
+    -->
+    <script>
+    //1.数组解构
+    // let arr = [1,2];
+    // var a = arr[0];
+    // var b = arr[1];
+    // let [a,b] = arr;
+    // console.log(a,b);
+
+    // let arr1 = [1,2,[3,4]//,888
+    // ];
+    // let [c,d,[e,f],g=100] = arr1;
+    // console.log(c,d,e,f,g);
+    // function fn([x,y,z=100]){
+    //     console.log(x,y,z);
+    // }
+    // fn([1,2]);
+    let obj={
+        name:'zs',
+        age:24,
+        x:'aaa',
+        y:'bbb'
+    }
+    let {name:n,age:a} = obj;
+    console.log(n,a);
+    let {x,y} = obj;
+    console.log(x,y);
+     
+    </script>
+    
+</body>
+</html>

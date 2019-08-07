@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    function Person(name,age){
+     this.name=name,
+     this.age=age
+    }  
+    Person.prototype.say = function(){
+            console.log('我是'+this.name);
+        }
+        var p1 = new Person('zs',20);
+        p1.say();//谁的方法this指向谁;
+    function Coder(name,age){
+        // Person(name,age);//当前this指向window
+        Person.call(this,name,age);//当前在Coder里，this指向Coder;改变Person中this指向
+    }
+   
+    var c1 = new Coder('xxx',11);
+    console.log(c1);
+    //继承父类的方法 ,想让Coder的prototype有人的方法
+   // Coder的原型对象下，本来有constructor指回Coder,
+   //将coder的prototype指向人类，需要手动添加constructor指回Coder
+    Coder.prototype = new Person();
+    Coder.prototype.constructor = Coder;
+    c1.say();
+    </script>
+</body>
+</html>

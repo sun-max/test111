@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>  <!-- 
+        const特点
+        1.let没有变量提升
+        2.let不能重复命名
+        3.块级作用域
+        4.临时失效区 （暂时性死区） 当前作用域不允许同名的变量进来
+
+     -->
+    <script>
+      
+    //1.const定义常量，不能修改
+    // 引用数据类型 地址不能修改 （地址中存的内容可以修改,栈存储地址，堆存储内容)
+    // const a=10;
+    // a=20;
+    // console.log(a);
+    // const arr=[1,2,3,4];
+    // // arr[0]=666;
+    // // arr = ['a','b'];
+    // console.log(arr);
+   
+    const obj={
+        name:'zs'
+    }
+  Object.freeze(obj);//冻结，使得无法改变obj中的内容。
+  obj.name='lisi';
+  console.log(obj);
+    
+    </script>
+</body>
+</html>

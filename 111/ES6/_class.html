@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     class Person{
+         constructor(name,age){
+             this.name = name;
+             this.age  = age;
+         }
+         say(){
+             console.log('hahaha');
+         }
+         //静态方法 类名.方法()调用
+         //不需要实例化类，即可直接通过该类来调用的方法，即称之为“静态方法”,不会被实例继承！
+         static xx(){
+             console.log('xxxx');
+         }
+     }
+     let P1 = new Person('zs',33);
+     console.log(P1);
+     P1.say();
+     class Coder extends Person{
+         constructor(name,age,num){
+             super(name,age);//通过super调用父类的;
+             this.littlehair = num;
+         }
+         //Coder自己的方法 
+         coding(){
+             console.log('hello world');
+         }
+     }
+     let c1 = new Coder('xx',20,13);
+     console.log(c1);
+     c1.coding();
+     
+     class Box {
+        static a() {
+        return '我是通过super来调取出来的';
+    }
+}
+     class Desk extends Box {
+        static a(){
+        return super.a();
+    }
+}
+     console.log(Desk.a());
+    
+    </script>
+</body>
+</html>

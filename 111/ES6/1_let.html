@@ -9,18 +9,21 @@
 <body>
     <script>
         //1.变量提升 当前作用域的上边 定义了但没有赋值，返回值为undefined
+        //let与var的区别 let没有变量提升
     // console.log(a);
     // var a=10;
-     // let与var的区别 let没有变量提升
     // console.log(b);
     // let b=10;
    
     //2.let不可以重复命名，var可以但会被覆盖
     // var a=10;
     // var a=20;
-    // let b=10;
+    // console.log(a);
+    // let b=10; 
     // let b=20;
-    
+   
+    // console.log(b);
+
     //3.var分为全局作用域和函数作用域
     //let多了一个块级作用域，遇到花括号里面let一个变量，花括号外面会访问不到
     // var  m=5;
@@ -41,18 +44,24 @@
     //     console.log(x);
     //     var x=20;
     // }
+    // a();
+
+    // var x=10;
     // function a(){
     //     //此时返回值为10
     //     console.log(x);
     //      x=20;
     // }
-    
-    var x=10;
-    function a(){
-        //4.let在作用域中不允许同名的作用域进来，自己的x还未定义，为临时失效区
-        console.log(x);
-        let x=20;
-    }
+    // a();
+
+    //4.let在作用域中不允许同名的作用域进来，自己的x还未定义，为临时失效区(暂时性死区)。
+    // var x=10;
+    // function a(){
+        
+    //     console.log(x);
+    //     let x=20;
+    // }
+    // a();
 
     
     </script>

@@ -21,22 +21,23 @@
      }
    
 //    //键值对
-//     function fn(arr){
-//         var obj = {};
-//         var result = [];
-//         arr.forEach(function(val){
+    function fn(arr){
+        var obj = {};
+        var result = [];
+        arr.forEach(function(val){
         //    if(obj[val]){//如果obj对象有val属性
-        // if(val in obj){
-//                obj[val] +=1;
-//            }else {
-//                obj[val] = 1;
-//                result.push(val);
-//            }
+        if(val in obj){
+               obj[val] +=1;
+           }else {
+               obj[val] = 1;
+               result.push(val);
+           }
               
-//         });
-//         console.log(obj);
-//         console.log(result);
-//     }
+        });
+        var arr1 = [...result]
+        console.log(obj);
+        console.log(arr1);
+    }
      fn([1,3,4,5,2,3,5,6,3,5]);
     </script>
 </body>

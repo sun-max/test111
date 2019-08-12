@@ -27,9 +27,21 @@
     
     //管理异步请求 将异步请求以同步的方式表现出来
     new Promise(function(resolve,reject){
-        $.get('url1',function(){
-            
+        //获取后台的地址 函数
+        $.get('url1',function(data){
+            //成功调回resolve
+            if(data){
+                resolve(data.id);
+            }else {
+                reject();//失败调回reject;
+            }
+        });
+    }).then(function(){
+        $.get('url2',function(){
+
         })
+    }).catch(function(){
+        console.log('失败');
     })
     
      </script>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #container{
+        width: 400px;
+        margin:50px auto;
+    }
+    ul{
+        list-style: none;
+    }
+    li{
+        height: 50px;
+        line-height: 50px;
+        background: #cccccc;
+        padding: 0 10px;
+        margin-bottom:10px;
+    }
+    .price,.close{
+        float:right;
+    }
+    .close{
+        margin-left:10px;
+        color: red;
+    }
+    .selected{
+        background:pink;
+    }
+</style>
+</head>
+<body>
+<div id="container">
+    <h1>todolist</h1>
+    <hr>
+    <div>
+        <label for="proName">名称</label>
+        <input type="text" id="proName" placeholder="请输入产品名" v-model="name">
+        <label for="proPrice">价格</label>
+        <input type="text" id="proPrice" placeholder="请输入产品价格" v-model="price">
+        <button class="add" @click="add()">添加</button>
+    </div>
+    <div>
+        <button class="search" @click="search()">搜索</button>
+        <input type="text" class="search-val" v-model="searchValue" placeholder="请输入搜索内容">
+        
+    </div>
+    <ul>
+        <li v-for="(product,index) in proList" @click= "change(product)" :class="{selected:product.isSelect}" v-show="product.isShow">
+            <input type="checkbox" v-model="product.isSelect">
+            <span>{{product.name}}</span>
+            <span class="close" @click.stop="del(index)">[X]</span>
+            <span class="price">{{product.price}}</span>
+        </li>
+    </ul>
+    <div>
+        <button class="del"  @click="cut()">删除选中</button>
+        总价
+        <span class="total_price">{{total()}}</span>
+    </div>
+</div>
+           
+    </div> 
+    <script src="vue.js"></script>
+    <script>
+    new Vue({
+        el:'#container',
+        data:{
+                proList : [
+                    {
+                        name:'裤子',
+                        price:11,
+                        isSelect:false,
+                        isShow:true
+                       
+                    },
+                    {
+                        name:'衣服',
+                        price:22,
+                        isSelect:false,
+                        isShow:true
+                        
+                    },
+                    {
+                        name:'电脑',
+                        price:3333,
+                        isSelect:false,
+                        isShow:true
+                        
+                    },
+                    {
+                        name:'iphoneX',
+                        price:6666,
+                        isSelect:false,
+                        isShow:true
+                       
+                    }
+                ],
+                name:'',
+                price:'',
+                searchValue:''
+               
+                },
+             methods:{
+              change(product){
+                    
+                   
+                    product.isSelect = !product.isSelect;
+                },
+                add(){
+                    if(this.name && this.price){
+                    this.proList.push({name:this.name,price:this.price*1,isSelect:false,isShow:true});
+                    this.name="";
+                    this.price="";
+                    }
+                },
+                total(){
+                    let sum = 0;
+                    this.proList.forEach(function(product){
+                        if(product.isSelect){
+                            sum += product.price;
+                        }
+                    })
+                    return sum;
+                },
+               
+                del(index){
+                    this.proList.splice(index,1);
+                },
+                cut(){
+                 let arr =  this.proList.filter(function(obj){
+                       return !obj.isSelect;
+                   });
+                   this.proList = [...arr];
+                } ,
+                search(){
+                   
+                    this.proList.forEach((product)=>{ 
+                        if(product.name.includes(this.searchValue)){
+                            product.isShow = true;
+                        }else{
+                            product.isShow = false;
+                        }
+                    });
+                }
+
+             
+                  
+
+                   }
+                })
+    
+    </script>
+</body>
+</html>

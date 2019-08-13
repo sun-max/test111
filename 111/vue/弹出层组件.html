@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+   
+   #container{
+       width:300px;
+       height:500px;
+       border:1px solid #000000;
+   }
+  .aa{
+      padding:10px;
+      float:left;
+      overflow: hidden;
+  }
+  .bb{
+      float:right;
+      padding:10px;
+  }
+  #content{
+      overflow: hidden;
+      border-bottom: 1px solid #000000
+  }
+  #username{
+    margin:10px 50px;
+  }
+#passwd{
+    margin:10px 50px;
+}
+    </style>
+</head>
+<body>
+    <div id='app'>
+        <button @click="loginShow=true">登录</button>
+        <button @click="regShow=true">注册</button>
+        <sub-group text='登录 ' v-show="loginShow">
+        用户名：<input type="text">
+        <br>
+        密码：<input type="text">
+        <br>
+        <button>登录</button></sub-group>
+        <sub-group text='注册' v-show="regShow">用户名：<input type="text">
+            <br>
+            密码：<input type="text">
+            <br>
+            <button>确认注册</button>
+        </sub-group>
+    </div>
+    
+    
+<template id='temp'>
+    <div id='container' v-show='isShow'>
+        <div id='content' > 
+        <span class='aa'>{{text}}</span>
+        <span class='bb' @click="close()" >[X]</span></div>
+        <slot></slot>
+        
+    </div>
+</template>
+    <script src="vue.js"></script>
+    <script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+          loginShow:false,
+          regShow:false
+        },
+       
+        methods:{
+         
+        },
+        components:{
+            "subGroup":{
+                template:'#temp',
+                props:['text'],
+                data(){
+                        return {
+                            isShow:true
+                        }
+                    },
+                    methods:{
+                        close(){
+                            this.isShow = !  this.isShow ;
+                        }
+                    }
+               
+               }
+       
+
+            
+        }
+
+    })
+    </script>
+</body>
+</html>

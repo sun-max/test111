@@ -7,9 +7,26 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="app">
+        <sub-group></sub-group>
+        <sub-group></sub-group>
+    </div>
+    <div>
+            <sub-group></sub-group>
+    </div>
     <script src="vue.js"></script>
     <script>
-      
+    //全局组件
+    Vue.component("subGroup",{
+        template:"<h2>hahaha</h2>"
+    })
+    new Vue({
+        el:"#app",
+        data:{
+
+        }
+    })
+    
     </script>
 </body>
 </html>

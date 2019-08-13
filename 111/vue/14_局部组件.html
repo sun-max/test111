@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .aa{
+        background: #aaaaaa;
+    }
+    </style>
+</head>
+<body>
+    <div id='app'>
+    <sub-group text='111'></sub-group>
+    <sub-group text='222'></sub-group>
+</div>
+<template id='temp'>
+    <div>
+        <h2 class='aa'>{{text}}</h2>
+        <p>{{count}}</p>
+        <button @click='fn()'>click</button>
+    </div>
+</template>
+    <script src="vue.js"></script>
+    <!--父组件向子组件传值 props:['text']-->
+    <script>
+        //局部组件
+     new Vue({
+         el:'#app',
+         data:{
+
+         },
+        //  components:{
+        //      "subGroup":{
+        //          template:'<div>hehehehe</div>'
+        //      }
+        //  }
+        components:{
+             "subGroup":{
+                 template:'#temp',
+                 props:['text'],
+                 data(){
+                     return{
+                         count:0
+                     }
+                  
+                    },
+                    methods:{
+                        fn(){
+                            this.count++;
+                        }
+                    }
+                    
+             }
+         }
+     })
+    </script>
+</body>
+</html>

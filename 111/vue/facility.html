@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+    </style>
 </head>
 <body>
      <div id='app'>
         <div>
-            是否需要额外付费设施<input type="checkbox" v-model="isCheck" >
+            是否需要额外付费设施<input type="checkbox" v-model="isCheck" @click="fn()">
             <ul v-show="isCheck">
                         <li v-for="facility in payList">
                         {{facility.name}}（{{facility.price}}） <input type="checkbox" v-model="orderList" :value="facility">
@@ -57,10 +62,10 @@
                  sum += obj.price;
              })
              return sum;
-         }
-            // fn(){
-            //     this.orderList.splice(1);
-            // }
+         },
+            fn(){
+                this.orderList.splice(1);//删除索引是1的之后所有的数组中的元素
+            }
         }
     })
     

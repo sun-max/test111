@@ -1,4 +1,50 @@
-$color:red;
+@import 'common';
+$color:orange;
+$color:red !default;
+$attr:width;
+$url:'1.jpg';
 body{
-    background:$color;
+    // background: $color;
+    color:green;
+    #{$attr}:800px;
+    height:300px;
+    background: $color url(#{$url}) 0 0 no-repeat;
+    #app{
+        color:pink;
+        h2{
+            width:800px;
+            @include a(300px,400px);
+        }
+        p{
+            height:300px;
+            @include a(500px,200px,pink);
+            padding:{
+                top:20px;
+                bottom:20px;
+            }
+            &:hover{
+                color:blue;
+            }
+        }
+        h5{
+            @extend h2;
+            color:#000;
+        }
+
+    }
+
+    .arrow{
+        @include arrow(10px,#00f);
+        width:add(500px,300px);
+        // height:ceil(300.5px);
+        height:(300px/3);
+        height:300px-200px;
+        
+    }
 }
+
+
+
+
+
+

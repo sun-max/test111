@@ -1,9 +1,12 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Movie from './views/Movie.vue';
-import Music  from './views/Music.vue';
-import Book  from './views/Book.vue';
-import Picture  from './views/Picture.vue';
+import Music from './views/Music.vue';
+import Book from './views/Book.vue';
+import Photo from './views/Photo.vue';
+import PhotoDetail from './views/PhotoDetail.vue';
+import MovieDetail from './views/MovieDetail.vue';
+import MusicDetail from './views/MusicDetail.vue';
 Vue.use(Router);
 
 export default new Router({
@@ -13,22 +16,38 @@ export default new Router({
     {
       path: '/',
       name: 'movie',
-      component: Movie
+      component: Movie,
+    },
+    {
+      path: '/movie/moviedetail',
+      name: 'moviedetail',
+      component: MovieDetail,
     },
     {
       path:'/music',
-      name: 'music',
-      component: Music
+      name:'music',
+      component:Music
+    },{
+      path:'/music/music-detail',
+      name:'music-detail',
+      component:MusicDetail
     },
     {
       path:'/book',
-      name: 'book',
-      component: Book
+      name:'book',
+      component:Book
     },
-    {
-      path:'/picture',
-      name: 'picture',
-      component: Picture
+    ,{
+      path:'/photo',
+      name:'photo',
+      component:Photo,
+      children:[
+        {
+          path:'photodetail',
+          name:'photodetail',
+          component:PhotoDetail
+        }
+      ]
     }
   ],
 });

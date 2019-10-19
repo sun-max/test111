@@ -1,22 +1,27 @@
 <template>
-    <div id='header' :style="{background:$store.state.color}">
-   {{$store.state.title}}
+    <div class="header" :style="{background:$store.state.color}" >
+        <button @click="goHome()">首页
+        </button>
+        {{$store.state.title}}
     </div>
 </template>
 
 <script>
     export default {
-        
+        methods:{
+            goHome(){
+                this.$router.push('/');
+            }
+        }
     }
 </script>
 
 <style lang="scss" scoped>
-#header{
-    height: 1rem;
-    background: #ff0000;
-    position:fixed;
-    top:0px;
-    width:100%;
-
-}
+    .header{
+        height: 50px;
+        background: red;
+        position: fixed;
+        top:0px;
+        width:100%;
+    }
 </style>

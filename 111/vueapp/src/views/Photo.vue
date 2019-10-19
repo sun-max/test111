@@ -1,6 +1,9 @@
 <template>
-    <div id='picture'>
-      图片
+    <div>
+        图片
+        <h2>图片 图片</h2>
+
+        <router-view></router-view>
     </div>
 </template>
 

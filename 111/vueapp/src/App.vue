@@ -4,8 +4,6 @@
       <!-- commonHeader组件 -->
       <common-header></common-header>
         <!-- <router-view></router-view> -->
-        
-     
       <div id='container'>
         <router-view></router-view>
         

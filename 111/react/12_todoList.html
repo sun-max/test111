@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+.red{
+    background: #ff0000;
+}
+.show{
+    display:block;
+}
+.hide{
+    display:none;
+}
+</style>
+<body>
+    <div id='root'></div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <!-- 将es6转换成es5 -->
+    <script src="browser.min.js"></script>
+    <!-- jsx -->
+    <script type='text/babel'>
+    //父组件
+   class Main extends React.Component{
+       constructor(){
+           super();
+          this.state={
+            list:[
+                {
+                    id:1,name:'吃饭',active:false,show:true
+                    },
+                    {
+                        id:2,name:'睡觉',active:false,show:true
+                    }
+            ],
+            id:3
+        
+          }  
+          this.addList = this.addList.bind(this); 
+          this.deleteList = this.deleteList.bind(this);  
+          this.change = this.change.bind(this);  
+          this.searchlist = this.searchlist.bind(this);
+        }
+       render(){
+           return(
+               <div>
+               <h2>todoList</h2>
+               <SearchList searchlist={this.searchlist}></SearchList>
+               <Add addList={this.addList}></Add>
+               <ShowList list={this.state.list} deleteList={this.deleteList} change={
+                   this.change
+               }></ShowList>
+               </div>
+           )
+       }
+      addList(val){
+          let arr = this.state.list;
+          arr.push({
+              id:this.state.id++,
+              name:val,
+              active:false,
+              show:true
+          });
+          this.setState({
+              list:arr
+          });
+      }
+      change(id){
+    let arr = [...this.state.list];
+    arr.forEach((obj,index)=>{
+        if(obj.id == id){
+            obj.active = !obj.active;
+        }
+    })
+   
+    this.setState({
+        list:arr
+    })
+      }
+    deleteList(index){
+      let arr = [...this.state.list];
+      arr.splice(index,1);
+      this.setState({
+          list:arr
+      })
+      }
+      searchlist(val){
+        let arr=[...this.state.list];
+        arr.forEach((obj)=>{
+            if(obj.name.includes(val)){
+                obj.show=true
+            }else{
+                obj.show=false
+            }
+        })
+        this.setState({
+          list:arr
+      })
+      }   
+    }
+  
+   class Add extends React.Component{
+    render(){
+       return (
+         <div>
+           <h2>添加<input type="text" ref='name'/>
+           <button onClick={()=>{
+                            this.props.addList(this.refs.name.value)
+                        }}>add</button></h2>
+           </div>
+       )
+   }
+   }
+   class SearchList extends React.Component{
+     render(){
+         return(
+             <div>
+                <h2>搜索
+                    <input type="text" ref={input=>this.myInput=input}/>
+                    <button onClick={()=>{
+                        this.props.searchlist(this.myInput.value);
+                    }}>search</button>
+                    </h2>
+        </div>
+         )
+     }
+   }
+   class ShowList extends React.Component{
+       render(){
+           return(
+               <div>
+                <ul>
+                    {
+                                this.props.list.map((obj,index)=>{
+                                let a = obj.show?"show":"hide";
+                                let b = obj.active?"red":"";
+                                let cName = a+" "+b;
+                                return (
+                                        <li key={obj.id} className={cName}>
+                                        <input type="checkbox" ref='ref1' onClick={
+                                        ()=>{
+                                            this.props.change(obj.id)
+                                        }
+                                        }/>
+                                        {obj.name}
+                                        <button onClick={()=>{
+                                           this.props.deleteList(index)
+                                        }}>删除</button>
+                                    </li>
+                                    
+                                    
+                                )
+                            })
+                              
+                            }  
+                            
+                    </ul>
+                </div>
+           )
+       }
+   }
+
+   ReactDOM.render(
+    <Main></Main>,
+    document.getElementById('root')
+
+   )
+    </script>
+</body>
+</html>

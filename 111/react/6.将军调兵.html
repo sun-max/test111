@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='root'></div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <!-- 将es6转换成es5 -->
+    <script src="browser.min.js"></script>
+    <!-- jsx -->
+    <script type='text/babel'>
+   class Main extends React.Component{
+    constructor(){
+      super();
+      this.state={
+          val:110,
+          val1:100,
+          val2:100
+          
+      }
+      this.change1 = this.change1.bind(this);
+      this.change2 = this.change2.bind(this);
+       }
+       change1(refs){
+           if(refs <= 110){
+      this.setState({
+             val:this.state.val - refs*1,
+             val1:this.state.val1 + refs*1
+            })
+           }
+       
+         }
+         change2(num){
+        if(num<110){
+         this.setState({
+          val:this.state.val - num*1,
+          val2:this.state.val2 + num*1
+         })}
+       }
+       render(){
+           return(
+               <div>
+             <h1>剩余士兵数量  {this.state.val}</h1>
+              <Children val1={this.state.val1} change1={this.change1} ></Children>
+              <Child val2={this.state.val2} change2={this.change2}></Child>
+              </div>
+           )
+       }
+       
+   }
+   //子组件
+   class Children extends React.Component{
+    render(){
+       return (
+           <div>
+                <h2>将军A有士兵： {this.props.val1}</h2>
+                <input type="text" ref='ref1' />
+                <button onClick={()=>{
+                    this.props.change1(this.refs.ref1.value);
+                   }}>click</button>
+
+               
+              
+            </div>
+       )
+   }
+   
+   }
+   class Child extends React.Component{
+       render(){
+           return(
+               <div>
+                
+                <h2>将军B有士兵： {this.props.val2}</h2>
+                <input type="text" ref='ref2' />
+                <button onClick={()=>{
+                    this.props.change2(this.refs.ref2.value);
+                    
+                }}>click</button>
+                
+                </div>
+           )
+       }
+   }
+   ReactDOM.render(
+    <Main></Main>,
+    document.getElementById('root')
+
+   )
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">click</button>
+    <!-- 一个需要频繁触发的函数，在规定时间内只让最后一次生效，前面的不生效 
+        比如搜索  输入框中输入搜索的内容，最后停下输入，才会搜索
+    -->
+    <script>
+       oDiv=document.getElementsById("#btn");
+       oDiv.onClick=function(){
+           console.log(Date.now());
+       }    
+    
+    </script>
+
+</body>
+</html>

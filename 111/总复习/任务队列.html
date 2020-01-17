@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 事件循环：
+    所有同步任务都在主线程上执行，形成一个执行栈。
+    主线程之外，还存在一个任务队列，只要异步任务有了运行结果，就在任务队列之中放置一个任务。
+    一旦执行栈中的所有同步执行任务完毕，系统就会读取任务队列，看看里面有哪些事件。那些对应的异步任务，于是结束等待状态，进行执行栈，开始执行。
+    主线程不断重复上面的三个步骤 -->
+    <!-- 定时器是异步代码 -->
+    <!-- macro-task(宏任务)：包括整体代码script,setTimeout,setInterval
+       宏任务所处的队列就是宏任务队列
+       宏任务队列可以有多个 
+     micro-task(微任务)：new Promise.then(回调)，process.nextTick
+       微任务所处的队列就是微任务队列
+       只有一个微任务队列
+       在上一个宏任务队列执行执行完毕后，如果有微任务队列就会执行
+       微任务队列的所有微任务
+       当宏任务队列中的任务执行完毕后，查看是否有微任务，再执行宏任务。   
+    
+    -->
+    
+    <script>
+        // Promise不是微任务，promise.then才是微任务
+        //执行完同步代码，先执行微任务再执行宏任务
+       setTimeout(function(){
+        console.log("定时器开始啦")
+
+    },0);
+    console.log("代码执行开始");
+    new Promise(function(resolve){
+        console.log("马上执行for循环了");
+        for(var i=0;i<10000;i++){
+            i==99&&resolve();
+        }
+    }).then(function(){
+        console.log("执行then了");
+    });
+      
+    </script>
+</body>
+</html>

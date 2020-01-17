@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #div1{
+        width:500px;
+        border: red solid 1px;
+        display:table-cell;
+       text-align: center;
+       vertical-align: center;
+          
+    }
+    #div2{
+        width: 100px;
+        height: 100px;
+        border: #000000 solid 1px;
+        display: inline-block;
+    }
+    </style>
+</head>
+<body>
+    <!-- 将父盒子设置为table-cell元素，
+        可以使用text-align:center和vertical-align:middle实现水平、垂直居中
+           table-cell实现居中
+            将父盒子设置为table-cell元素，设置
+            text-align:center,vertical-align: middle;
+            子盒子设置为inline-block元素
+
+    
+    -->
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+</body>
+</html>

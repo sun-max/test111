@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 子元素相对于父元素定位，left：50%； top：50%；
+        transform： transform:translateX(子元素宽度的50%) translateY(子元素高度的50%); */
+       #div1{
+           width:500px;
+           height:300px;
+           border: red solid 1px;
+           position: relative;
+
+       }
+    #div2{
+        width: 100px;
+        height: 100px;
+        border: #000000 solid 1px;
+        position:absolute;
+        left:50%;
+        top:50%;
+        transform:translateX(-50px) translateY(-50px);
+    }
+    </style>
+</head>
+<body>
+    <div id="div1">
+
+        <div id="div2"></div>
+    </div>
+</body>
+</html>

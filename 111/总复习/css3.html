@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #div1{
+        width:200px;
+        height:100px;
+        background:#ff0000;
+        /* transition: width  2s ease 2s;只有开始和结束两种状态，补齐中间的动画 */
+        /* animation: run 2s linear 2s 2 forwards;帧动画(animation):不仅有开始和结束状态，还可以用关键帧来定义中间的状态，做出比较复杂的动画. */
+    }
+    @keyframes run{
+        50%{
+          width:600px;
+        }
+        100%{
+            width:300px;
+        }
+    }
+    #div1:hover{
+        width:800px;
+    }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

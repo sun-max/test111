@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+      #div1{
+          width:1000px;
+          height:100px;
+          background-color: #ff0000;
+          display:flex;
+          align-items: center;
+          justify-content: center;
+      }
+      #div2{
+    
+          width:500px;
+          height:100px;
+         
+      }
+      #div3{
+          flex:1;
+          height:100px;
+          background:#000000;
+      }
+     
+    </style>
+</head>
+<body>
+    <!-- （新特性）弹性盒模型
+    父元素：display：flex
+           flex-direction:row|row-reverse|column|column-reverse
+           横向从左到右排列|横向相反|即纵向从上往下排列|纵向相反
+           align-items:flex-start|flex-end|center|baseline|stretch
+           纵轴垂直对齐方式
+           justify-content:flex-start|flex-end|center|space-between|space-around
+           横轴水平对齐方式
+           子元素：flex：flex-group:份数 是剩余空间的份数
+           例子：元素布局问题（水平垂直都居中，右侧固定自适应） -->
+           <div id="div1">
+               <div id="div2"></div>
+               <div id="div3"></div>
+            </div>
+           
+</body>
+</html>

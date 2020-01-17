@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+       // 先看下面的Generator函数，
+
+     function* helloGenerator() {
+       console.log("this is generator");
+   }
+    //这个函数与普通的函数区别是在定义的时候有个*,我们来执行下这个函数。
+
+    function* helloGenerator() {
+        console.log("this is generator");
+    }
+    helloGenerator();//没有执行
+    //我们发现，并没有像普通的函数一样，输出打印日志。我们把代码改成下面：
+
+    function* helloGenerator() {
+    console.log("this is generator");
+    }
+    var h = helloGenerator();
+    h.next();
+    //这个时候如期的打印了日志，我们分析下，对于Generator函数，下面的语句
+
+    var h = helloGenerator();
+    //仅仅是创建了这个函数的句柄，并没有实际执行，需要进一步调用next(),才能触发方法。
+
+    function* helloGenerator() {
+        yield "hello";
+        yield "generator";
+        return;
+    }
+    var h = helloGenerator();
+    console.log(h.next());//{ value: 'hello', done: false }
+    console.log(h.next());//{ value: 'generator', done: false }
+    console.log(h.next());//{ value: 'undefined', done: true }
+
+        </script>
+</body>
+</html>

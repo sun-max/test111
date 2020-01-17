@@ -1,0 +1,17 @@
+nodejs模块三种 
+ 模块加载原生模块第三方模块时不需要写路径，自定义需要
+ 是不是所有的原生模块都需要用 require加载
+ global timer buffer process stream console 自行加载
+
+
+ 读取文件中内容有两种方式
+ (1)按照缓冲区方式读
+ (2)按照stream的pipe的方式读 
+  
+
+  get 传输的数据都在url上
+  一次性传输的数据 不能超过4096个字节
+
+  post传输数据不在url上
+  post一次性传输数据不限制
+   

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="div1">hahahaahahahah</div>
+   
+    <script>
+    //    $("#div1").css();
+    //    $();  返回值是一个jq对象
+    function $(str){
+        return new Jquery(str);
+    }
+    function Jquery(str){
+        this.eles =[];
+        var sel =str.charAt(0);
+        var name = str.substr(1);
+        if(sel=="#"){
+         this.eles.push(document.getElementById(name));
+        }else if(sel=="."){
+          
+        }
+        return this;
+    }
+   Jquery.prototype.css=function(arg1,arg2){
+       if(typeof arg1=="string" && typeof arg2=="string"){
+           this.eles.map(function(ele,index){
+               ele.style[arg1]=arg2;
+           })
+       }else if(typeof arg1=="Object"&& arg2==undefined){
+        this.eles.map(function(ele,index){
+               for(key in arg1){
+                       ele.style[key]=arg1[key];
+               }
+           })
+       }
+
+   }
+Jquery.prototype.on=function(eventName,handle){
+    this.eles.map(function(ele,index){
+            ele.addEventListener(eventName,handle);
+    })
+}
+   $(".div1").css("background","red");
+//    $(".div1").css({
+//        background:"red",
+//        width:"100px"
+//    }).on("click",function(){
+//        console.log("hahaha");
+//    })
+ 
+    
+    </script>
+</body>
+</html>

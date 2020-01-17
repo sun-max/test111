@@ -1,0 +1,20 @@
+移动端兼容性问题：
+首先是移动布局自适应不同屏幕的方式
+（1）响应式布局@media
+ (2)100%布局 弹性盒模型
+ (3)等比缩放布局(rem)
+ 还有就是机型兼容性问题，手机固有bug某些ios设备触发不了点击事件在元素上添加pointer:cursor
+ 移动端兼容性问题（点透事件 1px）
+ 
+ 解决点透事件的方式
+ 1.touchstart代替click.即click的触发有延迟的，这个时间大概在300ms左右
+ .on("touchstart",function(){
+     e.preventDefault();阻止默认行为
+ })
+ 2.引入fastclick.js，因为fastclick源码不依赖其他库所以你可以在原生的js前直接加上
+ FastClick.attach(document.body);
+ 3.用touchend代替tab事件并组织掉touchend的默认行为preventDefault()
+ 4.延迟一定的时间（300ms+）来处理时间
+
+
+px  em相对于父元素的fontsize   rem相对于HTML根元素的fontsize

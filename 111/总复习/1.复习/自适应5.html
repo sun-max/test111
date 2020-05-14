@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .content{
+            float: right;
+            width: 100%;
+            height: 400px;
+        }
+        .right{
+            height: 400px;
+            background: red;
+            margin-left: 200px;
+        }
+        .left{
+            float: right;
+            width:200px;
+            height: 400px;
+            background: green;
+            margin-right: -200px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- 5.html中左侧元素放在右侧元素后面，右侧：父元素content宽度100%，右浮动，自己左边距200px；左侧：右浮动，右边距-200px -->
+    <div class="content">
+		<div class="right"></div>
+	</div>
+	<div class="left"></div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            width:100px;
+            height:100px;
+            background-color: blue;
+        }
+        #div2{
+         width:100px;
+         height:100px;
+         background-color: aquamarine;
+         display: inline-block;
+        }
+    </style>
+</head>
+           <!-- 1，行内元素
+           不会自动换行；设置宽高无效；设置margin垂直方向无效，水平方向有效；
+           设置padding垂直水平均有效；宽高是元素内容撑得；
+           2.行内块元素
+           不会自动换行；可以识别宽高；默认排列方式从左到右
+           常用元素有:img,input,td等
+           3.块元素
+           自动换行
+           可以识别宽高
+           设置margin和padding水平垂直方向均有效
+           多个块元素标签并列，默认排列方式从上到下
+
+        -->
+<body>
+    <!-- 怎样是行元素和块元素在同一行，将块元素设置为行内块元素；display:inline-block; -->
+    <span>1111</span>
+    <div id="div2"></div>
+</body>
+</html>

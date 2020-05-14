@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- map类似于对象,也是键值对的集合，但是“健”的范围不限于字符串，
+    各种类型的值(包括对象)都可以当做键，new Map() -->
+    <script>
+        //对象的属性名是字符串
+        //map的属性名可以是其他类型
+       let obj = {
+           name:'zs'
+       }
+       let p1 = new Map();
+       p1.set('age',10);
+       p1.set(obj,"haha");
+       console.log(p1);
+    </script>
+</body>
+</html>

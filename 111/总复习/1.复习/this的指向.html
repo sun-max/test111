@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+    <script>
+             function a(){
+                console.log(this);
+             }
+             a();//this指向window
+
+             setTimeout(function(){
+                 console.log(this);
+             },100);//this指向window
+      var aLi = document.getElementsByTagName('li');
+    //   for(var i=0;i<aLi.length;i++){
+    //       aLi[i].onclick=function(){
+    //           console.log(this);//点谁this指向谁
+    //       }
+    //   }
+    for(var i=0;i<aLi.length;i++){
+          aLi[i].onclick=function(){
+              setTimeout(function(){
+                     console.log(this);
+              },100);
+          }
+      }
+
+   var obj = {
+       name:'zs',
+       age:20,
+       say:function(){
+           console.log(this);
+       }
+   }
+   obj.say();//this指向obj,谁的方法this指向谁
+
+
+   在构造函数中this指向new出来的实例化对象
+
+
+
+
+   改变this指向的方法
+   1.call
+   2.apply
+   3.bind
+   三个方式的区别
+var obj2 = {
+    name:'xiaowu'
+}
+var obj = {
+       name:'zs',
+       age:20,
+       say:function(){
+           console.log(this);
+       }
+   }
+   obj.say.call(obj2);//this指向obj2
+    </script>
+</body>
+</html>

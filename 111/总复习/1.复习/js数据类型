@@ -1,0 +1,11 @@
+基本数据类型 
+number string undefined null boolean symbol
+引用数据类型 
+Array Object
+
+判断数据类型
+typeof
+到底怎么判断数组和对象
+Array.isArray();
+instanceof
+contructor

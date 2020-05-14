@@ -1,0 +1,3 @@
+vue2.0/vue3.0双向数据绑定实现原理：
+因为现在项目用的都是vue2.0，研究底层原理
+运用了ES5：Object.defineProperty对数据进行劫持

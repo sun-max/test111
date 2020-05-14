@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 什么是闭包
+    1.函数嵌套函数
+    2，内部函数可以引用外部函数的变量或参数 
+    闭包的好处：
+    （在普通的函数中,变量使用会被垃圾回收机制释放。）
+    1.希望一个变量长期驻扎在内存中
+    2避免全局变量的污染(代码模块化)
+    3.私有成员的存在
+    闭包的用法：
+    1.代码模块化 避免全局污染
+    2.循环中找到对应元素的索引，不需要加索引了
+    闭包需要注意的地方 会引发内存泄漏。
+
+-->
+    <script>
+    //     function fn1(val){
+    //      var a= 20;
+    //      return function(){
+    //          a++;
+    //          console.log(a,val);
+    //      }
+    //     }
+    //  var f = fn1('hello');
+    //  f();//21 hello
+    //  f();//22 hello
+
+   var f = (function fn1(val){
+         var a= 20;
+         return function(){
+             a++;
+             console.log(a,val);
+         }
+        })();//调用了外层函数，并且将函数的返回值赋给f
+        f();//21
+        f();//22
+        f();//23
+
+    </script>
+</body>
+</html>

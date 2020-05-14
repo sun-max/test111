@@ -1,0 +1,63 @@
+// 五大方案：
+定位：三种
+1.知道盒子具体的宽和高
+ .body{
+    position:relative;
+}
+.box{
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-top:-25px;
+    margin-left:-50px;
+}
+2.有宽高，不需要考虑宽高时：
+.box{
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    margin:auto;
+}
+3.translate(css3)
+不需要具体宽高
+.box{
+    position:absolute;
+    top:50%;
+    left:50%
+    transform:translate(-50%,-50%);
+
+}
+缺点：兼容性不好。
+
+
+display:flex;
+.body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+缺点：不兼容
+
+JavaScript
+winw=HMTL.clientWidth;
+winH=HTML.clientHeight;
+boxW=box.offsetWidth;
+boxH.box.offsetHeight;
+box.style.position="absolute";
+box.style.left=(winw-boxW)/2 + 'px';
+box.style.top=(winH-boxH)/2 + 'px';
+
+display:table-cell;
+要求父元素有固定宽高。
+body:{
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+}
+.box{
+    display:inline-block;
+}
+
+答：这种需求在我之前的项目中是很常见的，看掘金觉得最后一种方式也蛮好的，我就记下来了。

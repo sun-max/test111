@@ -1,0 +1,13 @@
+标准盒模型
+box-sizing:content-box;
+width=content+padding+border;
+项目中加padding的时候，会撑出来滑动条。使得width长于body的width;将它改为怪异盒模型。
+怪异盒模型
+box-sizing:border-box;    看源码的时候，默认为ie盒模型
+width:content;
+
+弹性盒子盒模型
+
+
+
+多列布局

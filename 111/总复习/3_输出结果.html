@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.对象中属性名引号与不加引号相同；属性名不可重复，数字属性名=字符串属性名
+        var a={},b='123',c=123;
+        a[b]='b';
+        a[c]='c';
+        console.log(a[b]);//c
+
+        // 2.Symbol是一种特殊的数据类型，创建的值是唯一的。(es6中新增的数据类型)
+        var a={},b=Symbol('123'),c=Symbol('123');
+        a[b]='b';
+        a[c]='c';
+        console.log(a[b]);//b
+   
+      //3.
+    //   （1）一个对象的属性名不能是一个对象，遇到对象属性名，会默认转换为字符串,调用toString方法
+    // obj={} arr=[12,23] obj[arr]="meiqi"   obj=>{"12,23":"meiqi"}
+    //   (2) 普通对象.toString()调取Object.prototype原型的方法（这个方法时检测数据类型的）
+    // obj={} obj.toString() =>[object object]
+      var a={},b={key:'123'},c={key:'456'};
+        a[b]='b';//[object object]:'b'
+        a[c]='c';//[object object]:'c'
+        console.log(a[b]);//c
+ //toString 和 valueOf区别
+
+
+
+ var test = (function(i){
+   return function(){
+     alert(i*=2);//alert弹出的结果都要转化为字符串，console.log结果就是数字4
+   }
+ })(2);
+ test(5);//输出结果是字符串 "4"
+//  alert({name:'zs'})
+
+var a=0;
+    b=0;
+    function A(a){
+      A=function(b){
+        alert(a + b++);
+
+      };
+      alert(a++);
+    }
+    A(1);
+  //  A(2);
+    </script>
+</body>
+</html>

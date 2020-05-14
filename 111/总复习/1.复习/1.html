@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="name"></div>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+         $.ajax({  
+        url: "http://69p.top/?url=https://v.qq.com/x/cover/wi8e2p5kirdaf3j.html",  
+      
+        type: "GET",  
+        dataType: "jsonp",  
+        success: function (data) {  
+        console.log(data);
+        $("#name").text(data);
+                }
+            });
+                });
+    </script>
+</body>
+</html>

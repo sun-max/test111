@@ -1,0 +1,41 @@
+css盒模型
+content padding border  margin
+1.标准盒模型
+width：200px；
+width=content
+2.怪异盒模型(ie6及ie6以下浏览器 不写doctype 会表现为怪异)
+width=content+padding+border
+
+标准盒模型 
+box-sizing:content-box;
+怪异盒模型
+box-sizing：border-box;
+
+
+
+外边距合并的问题
+<div id="div1">
+    <div id="div2"></div>
+</div>
+#div1{
+    width：200px；
+    height:200px;
+    background:#ff0000;
+    margin-top:20px;
+}
+#div2{
+    width：200px；
+    height:200px;
+    background:#0000ff;
+    margin-top:50px;
+}
+有两个相邻的外边距，会合并成较大的那个值
+解决外边距合并
+1.父元素加overflow:hidden
+2.父元素加边框
+3.父元素或子元素浮动或定位
+
+假如是同级元素，也会发生外边距合并
+margin-bottom：20px；
+margin-top：80px；
+将外边距设置到一个元素上或通过padding实现

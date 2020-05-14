@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+#left{
+    height:200px;
+    width:200px;
+    background-color: red;
+    float:left;
+}
+#right{
+    height:300px;
+    width:300px;
+    background-color: rebeccapurple;
+    float:right;
+
+}
+#wrap{
+
+    background-color:salmon;
+}
+    </style>
+</head>
+<body>
+    <!-- 此时父元素的高度为0px;因为子元素浮动，使得父元素高度塌陷。 -->
+    <div id="wrap">
+        <div id="left">111</div>
+        <div id="right">222</div>
+    </div>
+</body>
+</html>

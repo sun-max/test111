@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1.浮动方案 
+         (1)兼容性好
+         (2)三栏高度互不影响
+         (3)需要清除浮动, 浮动会造成相关元素脱离文档流，
+         需要做一些清除浮动的处理。另外当中间区域内容高度超出设定高度时候，会破坏三栏布局。 
+         center一定要放到最后      
+        */
+       *{
+         padding: 0;
+         margin: 0;
+       }
+        article div{
+      height: 400px;
+        }
+    /* .left{
+      float:left;
+      width:200px;
+      background: red;
+    }
+    .center{
+      background: yellow;
+    }
+    .right{
+      float:right;
+      width:200px;
+      background: blue;
+    } */
+
+          /*2.绝对定位
+          三个div顺序可以任意
+          
+            */
+            /* .left,.right{
+              width: 200px;
+              height: 100px;
+              background-color: blue;
+              position: absolute;
+          }
+          .left{
+            left:0;
+          }
+          .right{
+            right:0
+          }
+          .center{
+            top:0;
+            margin:10px 200px;
+            height:100px;
+            background-color: blueviolet;
+          } */
+
+          /* 3.css3新特性弹性盒模型
+          缺点：兼容性不好，center一定要放到中间
+          */
+          /* .body{width:100%;display: flex; height: 100px;}
+          .left,.right{width: 200px;height: 100px;  background-color: lightpink}
+         .center{ flex:1; height: 100px; background-color: lightgreen} */
+
+         /* 4.圣杯布局：margin负值法。
+         在center的外部包一个div,包含div需要设置float属性使其形成一个BFC，
+         并设置宽度，并且这个宽度要和left块的margin负值进行配合.
+         
+          
+          */
+       .wrap{
+         width:100%;
+         float:left;
+         background-color: #fff;
+       }
+       .wrap .center{
+         margin:0 200px;
+         height:100px;
+         background-color: #ffe6b8;
+       }
+       .left,.right{
+         width: 200px;
+         height: 100px;
+         float:left;
+         background-color: cornflowerblue;
+       }
+       .left{
+         margin-left:-100%;
+         background-color: lightpink
+       }
+       .right{
+         margin-left:-200px;
+       }
+    </style>
+</head>
+<body>
+    <div class="body">
+        <div class="left">左</div>
+        <div class="wrap"><div class="center">中</div></div>
+        
+        <div class="right">右</div>
+        
+    </div>
+    <script>
+      
+
+
+    </script>
+</body>
+</html>

@@ -12,10 +12,11 @@ import '@/mock/mock.js';
 // import 'vant/lib/index.css';
 // Vue.use(Vant);
 //vant按需引入
-import { NavBar,Icon, Tabbar, TabbarItem,Swipe, SwipeItem,Lazyload ,Tab, Tabs, Field,CellGroup,Button,Toast } from 'vant';
+import {PullRefresh, List, NavBar,Icon, Tabbar, TabbarItem,Swipe, SwipeItem,Lazyload ,Tab, Tabs, Field,CellGroup,Button,Toast,Row, Col  } from 'vant';
 
-Vue.use(NavBar).use(Icon).use(Tabbar).use(TabbarItem).use(Swipe).use(SwipeItem)
-.use(Lazyload).use(Tab).use(Tabs).use(Field).use(CellGroup).use(Button).use(Toast );
+Vue.use(PullRefresh).use(List).use(NavBar).use(Icon).use(Tabbar).use(TabbarItem).use(Swipe).use(SwipeItem)
+.use(Lazyload).use(Tab).use(Tabs).use(Field).use(CellGroup).use(Button).use(Toast )
+.use(Row).use(Col);
 
 new Vue({
   router,

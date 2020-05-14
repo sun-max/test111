@@ -4,6 +4,8 @@ const URL = {
     getVarietyItem : MOCKURL + 'getVarietyItem',
     getHotProduct : MOCKURL + 'getHotProduct',
     registUser: SERVERURL + 'user/registUser',
-    loginUser :SERVERURL + 'user/loginUser'
+    loginUser :SERVERURL + 'user/loginUser',
+    getTypes :SERVERURL + 'type/getTypes',
+    getProductsType: SERVERURL + 'product/getProductsType'
 }
 export default URL;

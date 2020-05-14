@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 如何把一个字符串中的大写变小写，小写变大写 -->
+    <script>
+        let str="TODAY IS SUNNY,我很开心";
+        str=str.replace(/[a-zA-Z]/g,content=>{
+            //大写字母取值范围（65-90）
+            // content.toUpperCase()===content
+            // content.charCodeAt()>=65&&content.charCodeAt()<=90
+           return content.toUpperCase()===content?content.toLowerCase():content.toUpperCase();
+        });
+        console.log(str);
+    </script>
+</body>
+</html>

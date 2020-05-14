@@ -1,0 +1,38 @@
+react组件：
+组件定义
+  函数定义（无状态）
+  class定义（有状态）
+父组件向子组件 
+props
+子组件向父组件传值：事件回调
+
+
+state:存值
+refs：取dom元素
+props：传值
+
+
+
+react生命周期：
+1.constructor：调用父级super（props），设置状态state。
+2.componentWillMount() 修改状态
+3.render()渲染挂载页面
+4.加载所有子组件
+5.componentDidMount渲染dom完毕，不要更新状态
+
+生命周期更新：
+1.componentWillReceiveProps（nextProps） 组件发生改变触发 
+如果是子组件，父组件向子组件传参发生改变
+2.shouldComponentUpdate(nxPro,nxSta) 控制组件是否重新渲染
+返回true或false   返回true继续向下进行生命周期，false则不进行
+3.componentWillUpdate(nxPro,nxSta) 进行重新渲染流程，属性发生变化
+4.render()
+5.componentDidMount渲染dom完毕，不要更新状态
+
+组件要卸载时调用，一些事件监听和定时器需要在此时清除。
+ReactDOM.unmountComponentAtNode(document.getElementById('root'));
+
+
+
+
+

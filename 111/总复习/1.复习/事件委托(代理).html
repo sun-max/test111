@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点击</button>
+    <ul id='ul1'>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+    <script>
+        // 事件委托：利用事件冒泡，只绑定一个函数就可以处理一类事件。
+        //好处：在js中，添加到页面上的事件数量直接关乎着页面的性能，
+        //多次与dom发生交互访问dom会导致页面重绘和重排，
+        // 导致拖慢整个页面，这就是为什么优化里中的减少dom操作的原因。
+        //而且，每个函数都是一个对象，对象就要占据内存，
+        // 内存大了性能自然就慢了
+        //后生成元素的事件绑定问题
+        var oUl = document.getElementById('ul1');
+          var oBtn = document.getElementById('btn');
+        var aLi = document.getElementsByTagName('li');
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].onclick = function(){
+                console.log(this.innerHTML);
+            }
+        }
+        oBtn.onclick = function(){
+            var oLi = document.createElement('li');
+            oLi.innerHTML = Math.random();
+            oUl.appendChild(oLi);
+        }
+        //应该将事件绑定在一开始就存在的父元素上,当点击子元素，发生事件冒泡到父元素，
+        // 会触发父元素的点击事件
+        oUl.onclick=function(e){
+          if(e.target.tagName == LI){
+              console.log(e.target.innerHTML);
+          }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #div1{
+            width:200px;
+            height:200px;
+            background:#ff0000;
+        }
+        #div2{
+            width:100px;
+            height:100px;
+            background:#0000ff;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+    <script>
+        //给div1绑定两个点击事件，会被覆盖
+        
+        var oDiv1 = document.getElementById('div1');
+        var oDiv2 = document.getElementById('div2');
+        //不会被覆盖
+        // oDiv1.addEventListener('click',function(){
+        //     console.log('div1 click1');
+        // },false);
+        // oDiv1.addEventListener('click',function(){
+        //     console.log('div1 click2');
+        // },false);//捕获为true，冒泡为false
+
+        oDiv1.addEventListener('click',function(){
+                    console.log('div1 捕获');
+                },true);
+                oDiv2.addEventListener('click',function(){
+                    console.log('div2 捕获');
+                },true);
+        oDiv1.addEventListener('click',function(){
+            console.log('div1 冒泡');
+        },false);
+        oDiv2.addEventListener('click',function(){
+            console.log('div2 冒泡');
+        },false);
+        //同时有捕获和冒泡，先从外到里，在从里往外，先捕获再冒泡
+    </script>
+</body>
+</html>

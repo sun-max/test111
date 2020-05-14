@@ -1,0 +1,18 @@
+BFC  块级格式化上下文
+box foematting context
+是一个独立的渲染区域 与这个区域的外部毫不相干
+
+触发BFC条件
+
+1.html
+2.float
+3.position:absolute 或fixed
+4.display:inline-block table-cell table-caption flex 
+5.overflow不为visible
+
+计算高度时，浮动元素也参与运算
+
+应用场景：
+1.利用BFC避免margin重叠(外边距合并问题)
+2.自适应两栏布局
+3.清除浮动

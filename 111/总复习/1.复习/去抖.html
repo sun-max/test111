@@ -12,10 +12,23 @@
         比如搜索  输入框中输入搜索的内容，最后停下输入，才会搜索
     -->
     <script>
-       oDiv=document.getElementsById("#btn");
-       oDiv.onClick=function(){
-           console.log(Date.now());
-       }    
+      
+      
+
+       function debounce(fn,delay){
+          var timer =  null;
+         
+         return function(){
+        clearTimeout(timer);
+        timer = setTimeout(function(){
+             fn();
+          },delay);
+       }
+       } 
+     oDiv=document.getElementById("btn");
+       oDiv.onclick=debounce(function(){
+         console.log(Date.now());
+       },300)
     
     </script>
 

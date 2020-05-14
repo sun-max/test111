@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+    display: flex;
+    flex-direction: row;
+}
+.left{
+    width: 200px;
+    height: 400px;
+    background: red;
+}
+.right{
+    flex: 1;
+    height: 400px;
+    background: green;
+}
+
+    </style>
+</head>
+<body>
+    <!-- 2、使用弹性布局，父元素display: flex，左侧定宽，右侧flex:1，占满容器宽度 -->
+    <div class="left"></div>
+	<div class="right">两栏布局；左侧定宽左浮动，右侧宽度100%</div>
+</body>
+</html>

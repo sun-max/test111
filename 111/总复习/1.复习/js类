@@ -1,0 +1,61 @@
+var p1 = {
+    name:'zs',
+    age:20,
+    say:function(){
+        console.log('哈哈);
+    }
+}
+构造函数
+function Person(){
+  this.name = "zs",
+  this.age = 20,
+  this.say=function(){
+      console.log("哈哈")
+  }
+}
+var p1 = new Person();
+console.log(p1);
+
+function Person(name,age){
+  this.name = name,
+  this.age = age,
+  this.say=function(){
+      console.log("哈哈")
+  }
+}
+var p1 = new Person("zs",20);
+console.log(p1);
+
+
+原型  prototype  
+函数有一个prototype属性，这个属性是一个指针，指向他的原型对象
+原型对象下的属性的属性和方法，可以被实例化对象所共享。
+原型下有一个constructor属性指向他的构造函数
+
+实例化对象的__proto__属性
+
+原型链：当从一个对象那里调取属性或方法时，如果该对象自身不存在这样的属性或方法，
+就会去自己关联的prototype对象那里寻找，如果prototype没有，就会去prototype关联
+的前辈prototype那里寻找，如果再没有则继续查找Protype.Prototypr引用的对象，依次
+类推，知道找到object的prototype，返回undefined，从而形成了原型链
+
+说到原型链就涉及到继承
+
+function Person(name,age){
+    this.name=name;
+    this.age=age;
+}
+Person.prototype.say=function(){
+    console.log(this.name+'haha');
+}
+function Coder(name,age){
+    this指向c1
+    通过调用父类的Person.call() 继承属性
+    Person.call(this,name,age);
+}
+var c1 = new Coder('zs',20);
+
+继承父类的方法
+Coder.prototype = new Person();
+Coder的原型对象下的constructor属性指回Coder。
+Coder.prototype.constructor = Coder;

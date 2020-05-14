@@ -1,0 +1,59 @@
+常用指令
+v-for 循环数组 对象
+v-text&v-html
+v-on $event @
+v-text:更新dom对象的textContent
+v-html：更新dom的innerHTML
+v-on:绑定事件
+v-model：在表单元素上创建双向数据绑定==监听用户的输入事件以更新数据
+v-bind 绑定属性
+v-for:基于元数据多次渲染元素或模板块
+v-if v-else v-else-if  v-show相当于display：none/block
+vue组件间传值
+父子组件传值
+父组件向子组件传值
+props
+<slot>
+子组件向父组件传值$emit()
+
+vue中computed watch区别
+computed:计算属性将被混入到Vue实例中。所有getter和setter的this上下文自动的绑定为Vue实例。
+计算属性的结果会被缓存，除非依赖的响应式属性变化才会重新计算
+watch:一个对象，键是需要观察的表达式，值是对应回调函数。
+watch{
+    a:function(newval,oldval){
+        
+    }
+}
+
+生命周期： 
+beforeCreate   组件实例刚被创建，组件属性计算之前，如data属性等。
+created   组件实例创建完成，属性已绑定，但dom还未完成，$el属性还不存在
+beforeMount 模板编译/挂载之前
+mounted 挂载之后（不保证组件已在document中）
+beforeUpdate 组件更新之前
+updated 组件更新之后
+
+
+acitivated  for keep-alive，组件被激活时调用
+
+
+
+
+
+vuex
+state访问状态对象
+mutations修改状态
+getters计算过滤操作
+actions异步修改状态
+
+
+双向数据绑定怎么实现的：
+1.创建一个vue实例，实现一个数据监听器Observer，通过es5中的Object.defineProperty()来
+实现对属性的劫持，能够对数据对象的所有属性进行监听，如有变动可拿到最新值并通知订阅者。
+或es6里的proxy也有相应的功能
+2.实现一个指令解析器compile（解析大括号表达式，解析指令），对每个元素节点的指令进行扫
+描和解析，根据指令模板替换数据，以及绑定相应的更新函数。
+3.实现一个watcher，作为连接Observer和compile的桥梁，能够订阅并收到每个属性变动的通知，执行指令绑定的
+相应回调函数，从而更新视图
+4.mvvm入口函数，整合以上三者。

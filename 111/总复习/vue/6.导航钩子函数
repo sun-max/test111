@@ -1,0 +1,13 @@
+关于路由的生命周期函数
+分为两种：全局和局部
+全局钩子函数
+beforeEach:路由切换开始使用
+
+afterEach：在路由切换离开时使用
+
+局部到单个路由
+beforeEnter
+组件的钩子函数
+beforeRouterEnter
+beforeRouterUpdate
+beforeRouterLeave

@@ -1,0 +1,52 @@
+1.说说你对vue 虚拟dom的理解：
+什么是虚拟dom?
+使用js的方式去添加dom 元素
+本质上是优化了diff算法，新旧dom对比，获取差异的dom，一次性
+更新到真实的dom上。
+
+虚拟dom也有自己的缺陷：更适合批量修改dom
+尽量不要跨层级修改dom
+设置key，可以最大的利用节点
+
+2.如何理解Vue的MVVM模式
+vue是一个MVVM框架。
+MVVM与MVC区别：
+MVC源于后端：model view controller
+MVVM也分为三层：model view viewModel
+
+
+
+
+3.vue2.0/vue3.0双向数据绑定实现原理：
+因为现在项目用的都是vue2.0，研究底层原理
+运用了ES5：Object.defineProperty对数据进行劫持
+
+4.请说下响应式数据原理：
+核心点：object.defineProperty
+默认Vue在初始化数据时，会给data中的属性使用object.defineProperty重新定义所有属性，当页面取到相应属性时
+会进行依赖收集（收集当前组件中的watch） 如果属性发生变化会通知相关依赖进行更新操作
+
+5.vue中的keep-alive作用：
+提供了include和exclude两个属性允许有条件的缓存
+实现原理：在create的时候将需要缓存的vnode节点放到cache中，在render()的时候，根据name在进行取出
+配合路由使用：假如首页需要缓存：
+1.{
+    path："/",
+    name:"home",
+    component:Home,
+    meta{
+        keepAlive:true
+    }
+}
+在app.vue加入
+<keep-alive>
+<router-view v-if="$route.meta.keepAlive"/>
+</keep-alive>
+
+2.不和路由搭配使用
+<keep-alive include="a,b">
+<component :is="view"></component>
+</keep-alive>
+
+
+

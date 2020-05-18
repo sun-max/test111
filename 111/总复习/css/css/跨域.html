@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 跨域就是跨文档消息通信
+         www.a.com www.b.com  域名不同会发生跨域
+         www.qq.com news.com 从主域访问到子域也会发生跨域的现象
+         localhost:80  localhost:81  跨端口号会发生跨域的现象
+         www.a.com www.a.com/css/index.html 不会发生跨域
+    -->
+  <!-- 跨域的方式 -->
+  <!-- 1.jsonp
+      <script src="不一定要传js文件，也可以传其他形式的文件"></script>
+    可以实现跨域
+   -->
+   <!-- 2.iframe
+       <iframe src="" frameborder="0"></iframe> 
+   实现了将另一个域名的页面加载在跨域的域名的页面，比较少用，可以跨域
+-->
+<!-- 
+    3.将数据传到后台，后台进行数据传输 
+-->
+<!-- 
+    4.后端写请求头：header("Access-Control-Allow-Origin:http://www.a.com");
+ -->
+</body>
+</html>

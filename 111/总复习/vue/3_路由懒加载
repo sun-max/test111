@@ -1,0 +1,20 @@
+懒加载：延迟加载或按需加载；
+vue的异步组件和webpack代码分割功能
+router/index.js中
+自定义方法：
+function resloveView(file){
+    return ()=>{
+        import(
+           // webpack chunk_name
+           '@/components/${file}.vue'
+        )
+    }
+}
+
+{
+    path:'/'
+    name:'HelloWorld'
+    component:resolveView('HelloWorld')
+}
+
+或在webpack中配置chunk_name;

@@ -1,0 +1,12 @@
+axios是什么，怎么使用，描述使用它实现登录功能？
+
+axios是基于promise用于浏览器和nodejs的一个http客户端，
+主要用于向后台发起请求，或在请求中做更多的控制。
+
+支持promise
+提供了一些并发的方法
+提供支持CSRF（跨站请求伪造）
+
+axios fetch ajax(jquery区别)
+前两者都是支持promise的语法，后者默认使用callback
+fetch本质上是脱离的 xhr，是新的语法（有自己的特性，默认不传cookie,不能像xhr去监听请求速度）

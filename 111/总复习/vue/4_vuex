@@ -1,0 +1,8 @@
+vuex是什么，怎么使用，哪种功能场景使用它
+是为vue的构建的状态集管理
+主要解决组件间状态共享的问题
+强调集中式管理
+便于维护，便于解耦 不是所有的项目都适合使用vuex
+
+vuex核心:
+state mutations getters actions  modules

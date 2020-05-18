@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+console.log(typeof undefined);
+console.log(typeof Array);
+console.log(typeof Function);
+
+function P(){}
+P.prototype.a = 'a';
+function C(){}
+
+var obj1 = new C();
+
+C.prototype = new P();
+C.prototype.constructor=C;
+//通过obj1来进行修改a
+obj1.constructor.prototype.a="xxx";
+console.log(P.prototype);
+console.log(obj1)
+    </script>
+</body>
+</html>

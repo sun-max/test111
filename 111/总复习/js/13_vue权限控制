@@ -1,0 +1,16 @@
+vue页面控制权限,vuex刷新保存状态，登录保存状态
+对于一个网站，有些页面需要登录后才能访问，这是需要做到权限管理
+1.页面权限控制
+首先在router配置meta属性
+meta{
+    requireAuth:true;//添加该字段，表示进入这个路由是需要登录的。
+}
+然后在钩子函数里判断该路由是否需要登录权限。 
+router.beforeEach((to,from,next)=>{
+    if(to.meta.requireAuth){
+
+    }else{
+        next();
+    }
+})
+2.vuex页面f5刷新后维持刷新的状态不变

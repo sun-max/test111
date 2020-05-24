@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #box{width: 100px;height: 100px; background-color: red;position: absolute;}
+    </style>
+</head>
+<body>
+    <div id="box" ></div>
+
+
+<script type="text/javascript">
+    var box=document.getElementById('box');
+    box.onmousedown=function (ev) {
+//考虑win8兼容性
+        var ev=ev||window.event;
+//获取鼠标到box对象(div)的left、top距离
+        var a=ev.clientX-box.offsetLeft;
+        var b=ev.clientY-box.offsetTop;
+
+        box.onmousemove=function (ev) {
+            var ev=ev||window.event;
+//获取当前box的位置
+            var c=ev.clientX-a;
+            var d=ev.clientY-b;
+            console.log(box.offsetLeft,box.offsetTop);
+
+            
+            if(c<=0){
+                c=0;
+            }
+            if (d<=0) {
+                d=0;
+            }
+//将得到的值载入
+            box.style.left=c+'px';
+            box.style.top=d+'px';
+        }
+    }
+    box.onmouseup=function () {
+//将拖动关闭
+        document.onmousemove=null;
+    }    
+</script>
+        
+    </script>
+</body>
+</html>

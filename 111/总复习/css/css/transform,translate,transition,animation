@@ -1,0 +1,27 @@
+1.使用translate时与transform一起使用
+translate：移动，元素从当前位置移动，根据给定的left和top位置参数
+transform:translate(50px,100px);
+
+2.transform,改变变形
+
+旋转rotate(),顺时针旋转给定角度
+扭曲：skew()元素翻转给定的角度，根据给定的水平线x轴与垂直线y轴
+缩放scale(),放大或缩小，根据给定的宽度(x轴)和高度(y轴) 参数scale(2,4);
+移动：translate()平移
+
+3.transition过度
+允许css属性值在一定的时间区间内平滑的过度，需要事件的触发，例如单击，获取焦点，失去焦点等。
+transition:property duration timing-function delay
+property:设置过度效果的css属性名称
+duration:规定完成过度效果需要多少秒或毫秒
+timing-function:规定速度效果的速度曲线。
+delay:定义过度效果何时开始
+
+4.animation动画
+animation:name duration  timing-function  delay iteration-count direction
+name:需要绑定到选择器的keyframe名称
+duration:完成动画所花费的实际，以秒或毫秒
+timing-function ：规定动画的速度曲线
+delay:动画开始之前的延迟
+iteration-count:动画播放的次数
+direction:规定是否应该轮流反向播放动画。

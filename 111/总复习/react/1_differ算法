@@ -1,0 +1,21 @@
+diff算法其实就是对DOM进行different比较不同的一种算法(虚拟的比较节约性能)
+补丁：用来更新Dom的任务
+比较原则“
+
+1.平级对比
+2.不跨级对比
+3.同级复用
+
+遍历原则：
+深度优先遍历
+广度优先遍历
+
+diff算法三大策略：
+1、tree diff
+2.component diff
+3.Element diff
+
+tree diff对树每一层进行遍历,找出不同
+
+component diff是数组层面的差异比较
+

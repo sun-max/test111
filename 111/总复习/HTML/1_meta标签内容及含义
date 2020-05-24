@@ -1,0 +1,25 @@
+<meta>元素
+1.可提供有关页面的元信息。
+2.位于文档头部，不包含任何内容
+3.定义了与文档相关的名称/值对，如<meta charset="UTF-8">，设定网页字符编码
+meta标签共有两个属性：http-equiv和name属性
+
+name属性：主要用于描述网页，比如网页的关键词，叙述等。与之相对应的属性值为content，content中的内容是对name填入类型的具体描述
+便于搜索引擎抓取。
+name：有以下几个参数
+（1）keywords：用于告诉搜索引擎，你网页的关键字
+<meta name="keywords" content="PHP中文网">
+(2)description(网站内容的描述)：告诉搜索引擎，你网站的主要内容。
+<meta name="description" content="php中文网提供大量免费，原创，高清的php视频教程">
+（3）viewport（移动端的窗口）
+常用于设计移动端网页。在用bootstrap，AmazeUI等框架都使用过viewport
+<meta name="viewport" content="width=device-width,intial-scale=1">
+(4)robots(定义搜索引擎爬虫的索引方式)
+robots用来告诉爬虫哪些页面需要索引，哪些页面不需要索引。content的参数有all,none,index,noindex,follow,nofollow.默认是all'
+none:搜索引擎将忽略此网页，等价于noindex,nofollow.
+noindex:搜索引擎不索引此网页
+nofollow:搜索引擎不继续通过此网页的链接索引其他的网页
+all:搜索引擎将索引此网页与继续通过此网页的链接索引其他的网页，等价于index,follow
+index:搜索引擎索引此网页
+follow：搜素引擎继续通过此网页的链接索引其他的网页。
+

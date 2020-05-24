@@ -1,0 +1,5 @@
+阻止事件冒泡：
+w3c方法：e.stopPropagation() ie:e.cancelBubble=true;
+
+阻止默认行为
+w3c方法：e.preventDefalut(),ie使用的是e.returnValue=false;

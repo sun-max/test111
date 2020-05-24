@@ -1,0 +1,16 @@
+function check(arr){
+    let obj={};
+    let maxName=null,maxNum=0;
+    for(let i=0;i<arr.length;i++){
+        var a=arr[i];
+        obj[a]===undefined?obj[a]=1:(obj[a]++);
+        if(obj[a]>maxNum){
+            maxName=a;
+            maxNum=obj[a];
+        }
+    }
+    console.log(maxName,maxNum);
+}
+
+
+check([1,2,3,4,4,4]);
